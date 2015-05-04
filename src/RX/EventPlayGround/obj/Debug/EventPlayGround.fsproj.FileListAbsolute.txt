@@ -6,3 +6,11 @@ C:\Git\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\FSharp.Core.dll
 C:\Git\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\FSharp.Core.xml
 C:\Git\AkkaActorModel\src\RX\EventPlayGround\obj\Debug\EventPlayGround.exe
 C:\Git\AkkaActorModel\src\RX\EventPlayGround\obj\Debug\EventPlayGround.pdb
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\EventPlayGround.exe.config
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\EventPlayGround.XML
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\EventPlayGround.exe
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\EventPlayGround.pdb
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\FSharp.Core.dll
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\bin\Debug\FSharp.Core.xml
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\obj\Debug\EventPlayGround.exe
+E:\Projects\FSharp\AkkaActorModel\src\RX\EventPlayGround\obj\Debug\EventPlayGround.pdb

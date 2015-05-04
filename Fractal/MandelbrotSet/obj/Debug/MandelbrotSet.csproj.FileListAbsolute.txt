@@ -3,3 +3,8 @@ C:\Temp\Fractal\MandelbrotSet\bin\Debug\MandelbrotSet.pdb
 C:\Temp\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.csprojResolveAssemblyReference.cache
 C:\Temp\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.dll
 C:\Temp\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.pdb
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\bin\Debug\MandelbrotSet.dll
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\bin\Debug\MandelbrotSet.pdb
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.csprojResolveAssemblyReference.cache
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.dll
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Debug\MandelbrotSet.pdb

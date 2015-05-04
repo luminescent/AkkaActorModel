@@ -75,10 +75,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Akka.Persistence">
-      <HintPath>..\bin\Akka.Persistence.dll</HintPath>
+      <HintPath>..\packages\Akka.Persistence.1.0.1-pre1504282013\lib\net45\Akka.Persistence.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Akka.Persistence.FSharp">
-      <HintPath>..\bin\Akka.Persistence.FSharp.dll</HintPath>
+      <HintPath>..\packages\Akka.Persistence.FSharp.1.0.1-pre1504282013\lib\net45\Akka.Persistence.FSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Akka.Remote">
       <HintPath>..\packages\Akka.Remote.1.0.1\lib\net45\Akka.Remote.dll</HintPath>

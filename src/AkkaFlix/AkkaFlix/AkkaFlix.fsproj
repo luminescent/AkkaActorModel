@@ -88,7 +88,6 @@
       <HintPath>..\..\..\packages\Akka.FSharp.1.0.1\lib\net45\Akka.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Akka.Remote" />
     <Reference Include="FSharp.PowerPack">
       <HintPath>..\..\..\bin\FSharp.PowerPack.dll</HintPath>
     </Reference>

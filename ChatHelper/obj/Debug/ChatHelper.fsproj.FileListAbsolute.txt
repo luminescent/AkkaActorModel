@@ -5,3 +5,11 @@ C:\Git\AkkaActorModel\ChatHelper\bin\Debug\FSharp.Core.dll
 C:\Git\AkkaActorModel\ChatHelper\bin\Debug\FSharp.Core.xml
 C:\Git\AkkaActorModel\ChatHelper\obj\Debug\ChatHelper.dll
 C:\Git\AkkaActorModel\ChatHelper\obj\Debug\ChatHelper.pdb
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Debug\ChatHelper.XML
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Debug\ChatHelper.dll
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Debug\ChatHelper.pdb
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Debug\FSharp.Core.dll
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Debug\FSharp.Core.xml
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\obj\Debug\ChatHelper.dll
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\obj\Debug\ChatHelper.pdb
+E:\Projects\FSharp\AkkaActorModel\ChatHelper\obj\Debug\ChatHelper.fsprojResolveAssemblyReference.cache

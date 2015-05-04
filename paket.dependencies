@@ -6,5 +6,15 @@ nuget NUnit.Runners
 nuget Nuget.CommandLine
 nuget FAKE
 nuget SourceLink.Fake
+nuget Akka
+nuget Akka.FSharp
+nuget Akka.Remote
+nuget Google.ProtocolBuffers
+nuget Google.ProtocolBuffers.Serialization
+nuget Helios
+nuget Newtonsoft.Json
+nuget FsPickler
+nuget FSPowerPack.Core.Community
+nuget FSPowerPack.Linq.Community
 
 github fsharp/FAKE modules/Octokit/Octokit.fsx
