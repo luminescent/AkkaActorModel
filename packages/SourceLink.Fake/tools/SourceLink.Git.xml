@@ -14,6 +14,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:SourceLink.GitRepo.VerifyFiles(System.Collections.Generic.IEnumerable{System.String})">
 <summary>
  returns a sorted list of files with checksums that do not match

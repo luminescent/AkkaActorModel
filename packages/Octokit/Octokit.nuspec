@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Octokit</id>
-    <version>0.7.2</version>
+    <version>0.10.0</version>
     <authors>GitHub</authors>
     <owners>GitHub</owners>
     <licenseUrl>https://github.com/octokit/octokit.net/blob/master/LICENSE.txt</licenseUrl>
@@ -11,7 +11,14 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>An async-based GitHub API client library for .NET</description>
     <summary>An async-based GitHub API client library for .NET</summary>
-    <releaseNotes>Fixed: unshipped Orgs Permissions preview API changes due to excessive paging in some situations.</releaseNotes>
+    <releaseNotes>Fixed: renamed methods to follow `GetAll` convention - #771 via @alfhenrik
+Fixed: helper functions and cleanup to make using Authorization API easier to consume - #786 via @haacked
+Breaking Changes:**
+- As part of #771 there were many method which were returning collections
+but the method name made it unclear. You might think that it wasn't much, but
+you'd be wrong. So if you have a method that no longer compile,
+it is likely that you need to set the prefix to `GetAll` to re-disocver that API.
+- `CommitComment.Position` is now a nullable `int` to prevent serialization issues.</releaseNotes>
     <copyright>Copyright GitHub 2013</copyright>
     <tags>GitHub API Octokit</tags>
     <dependencies>

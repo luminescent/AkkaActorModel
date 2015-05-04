@@ -4,6 +4,62 @@
         <name>RazorEngine</name>
     </assembly>
     <members>
+        <member name="T:RazorEngine.AttributeValue">
+            <summary>
+            Razor Html Attribute value
+            </summary>
+        </member>
+        <member name="M:RazorEngine.AttributeValue.#ctor(RazorEngine.PositionTagged{System.String},RazorEngine.PositionTagged{System.Object},System.Boolean)">
+            <summary>
+            Creates a new Razor Html Attribute value.
+            </summary>
+            <param name="prefix"></param>
+            <param name="value"></param>
+            <param name="literal"></param>
+        </member>
+        <member name="M:RazorEngine.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})">
+            <summary>
+            Convert from a tuple.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.AttributeValue.FromTuple(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})">
+            <summary>
+            Convert from a tuple.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.Object,System.Int32},System.Boolean})~RazorEngine.AttributeValue">
+            <summary>
+            Convert from a tuple
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.AttributeValue.op_Implicit(System.Tuple{System.Tuple{System.String,System.Int32},System.Tuple{System.String,System.Int32},System.Boolean})~RazorEngine.AttributeValue">
+            <summary>
+            Convert from a tuple.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RazorEngine.AttributeValue.Prefix">
+            <summary>
+            The prefix of the attribute.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.AttributeValue.Value">
+            <summary>
+            The Value of the attribute.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.AttributeValue.Literal">
+            <summary>
+            Indicates whether the attribute is a lital.
+            </summary>
+        </member>
         <member name="T:RazorEngine.Compilation.CompilerServiceBase">
             <summary>
             Provides a base implementation of a compiler service.
@@ -42,6 +98,12 @@
             Gets or sets whether the compiler service is operating in debug mode.
             </summary>
         </member>
+        <member name="P:RazorEngine.Compilation.ICompilerService.DisableTempFileLocking">
+            <summary>
+            Gets or sets whether the compiler should load assemblies with Assembly.Load(byte[])
+            to prevent files from being locked.
+            </summary>
+        </member>
         <member name="F:RazorEngine.Compilation.CompilerServiceBase.DynamicTemplateNamespace">
             <summary>
             The namespace for dynamic templates.
@@ -64,17 +126,25 @@
             All references we used until now.
             </summary>
         </member>
-        <member name="M:RazorEngine.Compilation.CompilerServiceBase.GetTemporaryDirectory">
+        <member name="M:RazorEngine.Compilation.CompilerServiceBase.GetDefaultTemporaryDirectory">
             <summary>
             Tries to create and return a unique temporary directory.
             </summary>
             <returns>the (already created) temporary directory</returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CompilerServiceBase.GetTemporaryDirectory">
+            <summary>
+            Returns a new temporary directory ready to be used.
+            This can be overwritten in subclases to change the created directories.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:RazorEngine.Compilation.CompilerServiceBase.BuildTypeName(System.Type,System.Type)">
             <summary>
             Builds a type name for the specified template type.
             </summary>
             <param name="templateType">The template type.</param>
+            <param name="modelType">The model type.</param>
             <returns>The string type name (including namespace).</returns>
         </member>
         <member name="M:RazorEngine.Compilation.CompilerServiceBase.CompileType(RazorEngine.Compilation.TypeContext)">
@@ -185,6 +255,12 @@
         <member name="P:RazorEngine.Compilation.CompilerServiceBase.Debug">
             <summary>
             Gets or sets whether the compiler service is operating in debug mode.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Compilation.CompilerServiceBase.DisableTempFileLocking">
+            <summary>
+            Gets or sets whether the compiler should load assemblies with Assembly.Load(byte[])
+            to prevent files from being locked.
             </summary>
         </member>
         <member name="P:RazorEngine.Compilation.CompilerServiceBase.MarkupParserFactory">
@@ -317,6 +393,42 @@
             </summary>
             <returns>An enumerable of loaded assemblies.</returns>
         </member>
+        <member name="M:RazorEngine.Compilation.CompilerServicesUtility.CSharpGetRawTypeName(System.Type)">
+            <summary>
+            Return the raw type name (including namespace) without any generic arguments.
+            Returns the typename in a way it can be used in C# code.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CompilerServicesUtility.VBGetRawTypeName(System.Type)">
+            <summary>
+            Return the raw type name (including namespace) without any generic arguments.
+            Returns the typename in a way it can be used in VB.net code.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CompilerServicesUtility.CSharpCreateGenericType(System.Type,System.String,System.Boolean)">
+            <summary>
+            Return the raw type name (including namespace) with the given modelTypeName as generic argument (if applicable).
+            Returns the typename in a way it can be used in C# code.
+            </summary>
+            <param name="templateType"></param>
+            <param name="modelTypeName"></param>
+            <param name="throwWhenNotGeneric"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CompilerServicesUtility.VBCreateGenericType(System.Type,System.String,System.Boolean)">
+            <summary>
+            Return the raw type name (including namespace) with the given modelTypeName as generic argument (if applicable).
+            Returns the typename in a way it can be used in VB.net code.
+            </summary>
+            <param name="templateType"></param>
+            <param name="modelTypeName"></param>
+            <param name="throwWhenNotGeneric"></param>
+            <returns></returns>
+        </member>
         <member name="T:RazorEngine.CrossAppDomainObject">
             <summary>
             Enables access to objects across application domain boundaries.
@@ -350,6 +462,166 @@
             Disposes the current instance via the disposable pattern.
             </summary>
             <param name="disposing">true when Dispose() was called manually.</param>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp">
+            <summary>
+            Helper class to cleanup locked files and folders after the current AppDomain has been unloaded.
+            (Because of locking they can't be deleted while the current AppDomain is up, see https://github.com/Antaris/RazorEngine/issues/244)
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.FromAssembly(System.Reflection.Assembly)">
+            <summary>
+            Get the StrongName of the given assembly.
+            </summary>
+            <param name="ass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.RegisterCleanup(System.String,System.Boolean)">
+            <summary>
+            A helper method to register items to cleanup for the current AppDomain.
+            </summary>
+            <param name="item"></param>
+            <param name="throwOnDefault">Throw an exception when we are on the default AppDomain</param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.#ctor(System.AppDomain,RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter)">
+            <summary>
+            Create a new CrossAppDomainCleanUp object for the current AppDomain.
+            </summary>
+            <param name="toWatch">the appDomain to watch for unload.</param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.RegisterCleanupPath(System.String)">
+            <summary>
+            Register the given path for cleanup.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.Dispose">
+            <summary>
+            Dispose the current instance.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Compilation.CrossAppDomainCleanUp.CurrentPrinter">
+            <summary>
+            Gets or sets the printer that is used by default when creating new CrossAppDomainCleanUp objects.
+            Do not use this property unless you know what you are doing.
+            Settings this to a serializable object is safe, however setting this to a marshalbyrefobject
+            can lead to errors if the object lives in the domain that is watched for unloading
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Compilation.CrossAppDomainCleanUp.CurrentCleanup">
+            <summary>
+            A cleanup instance for the current AppDomain
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter">
+            <summary>
+            Simple helper object to print status messages across appdomains.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter.Print(System.String,System.Object[])">
+            <summary>
+            Print a status message
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter.PrintError(System.String,System.Object[])">
+            <summary>
+            Print a error message.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.Printer">
+            <summary>
+            A simple Printer which wrints in stdout and stderr.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.Printer.#ctor">
+            <summary>
+            Creates a new simple printer.
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.ErrorOnlyPrinter">
+            <summary>
+            A simple printer writing only in stderr.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.ErrorOnlyPrinter.#ctor">
+            <summary>
+            Create a new ErrorOnlyPrinter.
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.EmptyPrinter">
+            <summary>
+            A new empty printer, which prints nothing.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.EmptyPrinter.#ctor">
+            <summary>
+            Creates a new EmptyPrinter
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper">
+            <summary>
+            Helper class to communicate with the Cleanup AppDomain.
+            Inits the cleanup AppDomain (AssemblyResolve) and registers items to delete.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.IsUnloaded(System.AppDomain)">
+            <summary>
+            Check if the given AppDomain is unloaded.
+            </summary>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.Init(System.AppDomain,RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter)">
+            <summary>
+            Init the current helper object with the given AppDomain.
+            </summary>
+            <param name="domain"></param>
+            <param name="printer"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.RegisterCleanupPath(System.String)">
+            <summary>
+            Register the given path for cleanup.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.SetupDomain">
+            <summary>
+            Setup AssemblyResolve.
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.SubscribeHelper">
+            <summary>
+            A helper to be able to subscribe to the DomainUnload event.
+            Additionally we use this object to check if the printer lives in the wrong appdomain 
+            (which would lead to an application crash).
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.SubscribeHelper.Subscribe(RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper)">
+            <summary>
+            Subscribe to the DomainUnload event and call the helper back.
+            </summary>
+            <param name="helper"></param>
+        </member>
+        <member name="M:RazorEngine.Compilation.CrossAppDomainCleanUp.CleanupHelper.SubscribeHelper.CheckPrinter(RazorEngine.Compilation.CrossAppDomainCleanUp.IPrinter)">
+            <summary>
+            Check if the given printer object is valid.
+            </summary>
+            <param name="printer"></param>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.InitHelper">
+            <summary>
+            This class only exists because we can't use a simple lambda.
+            </summary>
+        </member>
+        <member name="T:RazorEngine.Compilation.CrossAppDomainCleanUp.RegisterCleanupHelper">
+            <summary>
+            This class only exists because we can't use a simple lambda.
+            </summary>
         </member>
         <member name="T:RazorEngine.Compilation.CSharp.CSharpCodeParser">
             <summary>
@@ -452,6 +724,7 @@
             Builds a type name for the specified template type.
             </summary>
             <param name="templateType">The template type.</param>
+            <param name="modelType">The model type.</param>
             <returns>The string type name (including namespace).</returns>
         </member>
         <member name="P:RazorEngine.Compilation.CSharp.CSharpDirectCompilerService.SourceFileExtension">
@@ -758,6 +1031,31 @@
             <param name="indexes">the indexes</param>
             <param name="value">the value</param>
             <returns>true when successfull</returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.ImpromptuInterface.Dynamic.ImpromptuForwarder.TryConvert(System.Dynamic.ConvertBinder,System.Object@)">
+            <summary>
+            Forwards the convert operation.
+            </summary>
+            <param name="binder">the binder</param>
+            <param name="result">the result</param>
+            <returns>true when successfull</returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.ImpromptuInterface.Dynamic.ImpromptuForwarder.TryBinaryOperation(System.Dynamic.BinaryOperationBinder,System.Object,System.Object@)">
+            <summary>
+            Forwards the Binary operation
+            </summary>
+            <param name="binder"></param>
+            <param name="arg"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.ImpromptuInterface.Dynamic.ImpromptuForwarder.TryUnaryOperation(System.Dynamic.UnaryOperationBinder,System.Object@)">
+            <summary>
+            Forwards the unary operation.
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
         </member>
         <member name="M:RazorEngine.Compilation.ImpromptuInterface.Dynamic.ImpromptuForwarder.Equals(RazorEngine.Compilation.ImpromptuInterface.Dynamic.ImpromptuForwarder)">
             <summary>
@@ -1505,7 +1803,7 @@
             <param name="rightArg">The right Arg.</param>
             <returns></returns>
         </member>
-        <member name="M:RazorEngine.Compilation.ImpromptuInterface.Impromptu.InvokeUnaryOpartor(System.Linq.Expressions.ExpressionType,System.Object)">
+        <member name="M:RazorEngine.Compilation.ImpromptuInterface.Impromptu.InvokeUnaryOperator(System.Linq.Expressions.ExpressionType,System.Object)">
             <summary>
             Invokes the unary opartor.
             </summary>
@@ -2680,6 +2978,11 @@
             Is Current Runtime Mono?
             </summary>
         </member>
+        <member name="T:RazorEngine.Compilation.ExecutionContextLessThread">
+            <summary>
+            The sole purpose of this class is to fix https://github.com/Antaris/RazorEngine/issues/267.
+            </summary>
+        </member>
         <member name="T:RazorEngine.Compilation.HasDynamicModelAttribute">
             <summary>
             Defines an attribute that marks the presence of a dynamic model in a template.
@@ -2802,6 +3105,18 @@
             <param name="result">The result.</param>
             <returns></returns>
         </member>
+        <member name="M:RazorEngine.Compilation.RazorDynamicObject.DynamicUnwrap">
+            <summary>
+            Unwraps the current RazorDynamicObject.
+            </summary>
+            <returns>the unwrapped object.</returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.RazorDynamicObject.Unwrap(System.Object)">
+            <summary>
+            Unwraps the current dynamic object.
+            </summary>
+            <returns>the unwrapped object.</returns>
+        </member>
         <member name="M:RazorEngine.Compilation.RazorDynamicObject.TryConvert(System.Dynamic.ConvertBinder,System.Object@)">
             <summary>
             Tries to convert the current instance.
@@ -2816,6 +3131,23 @@
             </summary>
             <param name="binder">The binder.</param>
             <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.RazorDynamicObject.TryBinaryOperation(System.Dynamic.BinaryOperationBinder,System.Object,System.Object@)">
+            <summary>
+            Forwards the binary operation
+            </summary>
+            <param name="binder"></param>
+            <param name="arg"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.RazorDynamicObject.TryUnaryOperation(System.Dynamic.UnaryOperationBinder,System.Object@)">
+            <summary>
+            Forwads the unary operation
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
             <returns></returns>
         </member>
         <member name="M:RazorEngine.Compilation.RazorDynamicObject.TryInvokeMember(System.Dynamic.InvokeMemberBinder,System.Object[],System.Object@)">
@@ -2890,6 +3222,13 @@
             <param name="paramTypes">the type of the arguments of the member</param>
             <param name="result">the result of invoking the found member.</param>
             <returns>true if a member was found and invoked.</returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.RazorDynamicObject.MarshalWrapper.Unwrap">
+            <summary>
+            Unwrap the currently wrapped object 
+            (note that this can cause crossing an app-domain boundary).
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:RazorEngine.Compilation.RazorDynamicObject.MarshalWrapper.GetResult(RazorEngine.Compilation.ImpromptuInterface.Dynamic.Invocation)">
             <summary>
@@ -2976,6 +3315,19 @@
             Try to resolve the reference to a file (throws when this is not possible).
             </summary>
             <param name="exceptionCreator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.ReferenceResolver.CompilerReference.Equals(System.Object)">
+            <summary>
+            Checks if the given object is equal to the current object.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.Compilation.ReferenceResolver.CompilerReference.GetHashCode">
+            <summary>
+            Gets a hashcode for the current object.
+            </summary>
             <returns></returns>
         </member>
         <member name="P:RazorEngine.Compilation.ReferenceResolver.CompilerReference.ReferenceType">
@@ -3159,10 +3511,21 @@
             Deletes all remaining files
             </summary>
         </member>
+        <member name="M:RazorEngine.Compilation.CompilationData.Finalize">
+            <summary>
+            Destructs the current instance.
+            </summary>
+        </member>
         <member name="M:RazorEngine.Compilation.CompilationData.Dispose">
             <summary>
             Clean up the compilation (ie delete temporary files).
             </summary>
+        </member>
+        <member name="M:RazorEngine.Compilation.CompilationData.Dispose(System.Boolean)">
+            <summary>
+            Cleans up the data of the current compilation.
+            </summary>
+            <param name="disposing"></param>
         </member>
         <member name="P:RazorEngine.Compilation.CompilationData.SourceCode">
             <summary>
@@ -3266,6 +3629,7 @@
             Builds a type name for the specified template type.
             </summary>
             <param name="templateType">The template type.</param>
+            <param name="modelType">The model type.</param>
             <returns>The string type name (including namespace).</returns>
         </member>
         <member name="P:RazorEngine.Compilation.VisualBasic.VBDirectCompilerService.SourceFileExtension">
@@ -3375,6 +3739,18 @@
             Gets whether the template service is operating in debug mode.
             </summary>
         </member>
+        <member name="P:RazorEngine.Configuration.ITemplateServiceConfiguration.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
+            </summary>
+        </member>
         <member name="P:RazorEngine.Configuration.ITemplateServiceConfiguration.EncodedStringFactory">
             <summary>
             Gets the encoded string factory.
@@ -3413,6 +3789,18 @@
         <member name="P:RazorEngine.Configuration.TemplateServiceConfiguration.AllowMissingPropertiesOnDynamic">
             <summary>
             Gets or sets whether to allow missing properties on dynamic models.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Configuration.TemplateServiceConfiguration.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
             </summary>
         </member>
         <member name="P:RazorEngine.Configuration.TemplateServiceConfiguration.BaseTemplateType">
@@ -3590,6 +3978,19 @@
             <param name="namespaces">The set of namespaces to include.</param>
             <returns>The current configuration builder.</returns>
         </member>
+        <member name="M:RazorEngine.Configuration.IConfigurationBuilder.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
+            </summary>
+            <returns>The current configuration builder.</returns>
+        </member>
         <member name="M:RazorEngine.Configuration.IConfigurationBuilder.UseDefaultActivator">
             <summary>
             Sets the default activator.
@@ -3746,6 +4147,19 @@
             <param name="resolver">The resolver delegate to use.</param>
             <returns>The current configuration builder.</returns>
         </member>
+        <member name="M:RazorEngine.Configuration.FluentConfigurationBuilder.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
+            </summary>
+            <returns>The current configuration builder.</returns>
+        </member>
         <member name="M:RazorEngine.Configuration.FluentConfigurationBuilder.UseDefaultActivator">
             <summary>
             Sets the default activator.
@@ -3804,6 +4218,18 @@
         <member name="P:RazorEngine.Configuration.FluentTemplateServiceConfiguration.AllowMissingPropertiesOnDynamic">
             <summary>
             Gets or sets whether to allow missing properties on dynamic models.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Configuration.FluentTemplateServiceConfiguration.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
             </summary>
         </member>
         <member name="P:RazorEngine.Configuration.FluentTemplateServiceConfiguration.BaseTemplateType">
@@ -3878,6 +4304,11 @@
             </summary>
         </member>
         <member name="P:RazorEngine.Configuration.RazorEngineConfigurationSection.AllowMissingPropertiesOnDynamic">
+            <summary>
+            Gets or sets whether to allow missing properties on dynamic models.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Configuration.RazorEngineConfigurationSection.DisableTempFileLocking">
             <summary>
             Gets or sets whether to allow missing properties on dynamic models.
             </summary>
@@ -4012,6 +4443,26 @@
             <summary>
             Quick access to an isolated RazorEngine. See <see cref="T:RazorEngine.Templating.IRazorEngineService"/>.
             </summary>
+        </member>
+        <member name="T:RazorEngine.TaskRunner">
+            <summary>
+            Helper for missing net40 methods, REMOVE me when we are net45 only.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.TaskRunner.Run``1(System.Func{``0})">
+            <summary>
+            Runs the given delegate in a new task (like Task.Run but works on net40).
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.TaskRunner.Run(System.Action)">
+            <summary>
+            Runs the given delegate in a new task (like Task.Run but works on net40).
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
         </member>
         <member name="T:RazorEngine.Templating.DynamicWrapperService">
             <summary>
@@ -4295,7 +4746,7 @@
             Initialises a new instance of <see cref="T:RazorEngine.Templating.TemplateLoadingException"/>.
             </summary>
             <param name="message">The message.</param>
-            <param name="message">The root cause.</param>
+            <param name="inner">The root cause.</param>
         </member>
         <member name="T:RazorEngine.Configuration.Xml.WrapperTemplateManager">
             <summary>
@@ -4474,6 +4925,18 @@
             Gets or sets whether to allow missing properties on dynamic models.
             </summary>
         </member>
+        <member name="P:RazorEngine.Configuration.Xml.XmlTemplateServiceConfiguration.DisableTempFileLocking">
+            <summary>
+            Loads all dynamic assemblies with Assembly.Load(byte[]).
+            This prevents temp files from being locked (which makes it impossible for RazorEngine to delete them).
+            At the same time this completely shuts down any sandboxing/security.
+            Use this only if you have a limited amount of static templates (no modifications on rumtime), 
+            which you fully trust and when a seperate AppDomain is no solution for you!.
+            This option will also hurt debugging.
+            
+            OK, YOU HAVE BEEN WARNED.
+            </summary>
+        </member>
         <member name="P:RazorEngine.Configuration.Xml.XmlTemplateServiceConfiguration.BaseTemplateType">
             <summary>
             Gets the base template type.
@@ -4557,6 +5020,78 @@
         <member name="F:RazorEngine.Language.VisualBasic">
             <summary>
             Visual Basic Language
+            </summary>
+        </member>
+        <member name="T:RazorEngine.PositionTagged`1">
+            <summary>
+            PositionTagged
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.#ctor(`0,System.Int32)">
+            <summary>
+            Creates a new PositionTagged instance
+            </summary>
+            <param name="value"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.Equals(System.Object)">
+            <summary>
+            Checks if the given object equals the current object.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.GetHashCode">
+            <summary>
+            Calculates a hash-code for the current instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.ToString">
+            <summary>
+            Returns Value.ToString().
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.op_Implicit(RazorEngine.PositionTagged{`0})~`0">
+            <summary>
+            convert implicitely to the value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.op_Implicit(System.Tuple{`0,System.Int32})~RazorEngine.PositionTagged{`0}">
+            <summary>
+            Convert from a tuple.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.op_Equality(RazorEngine.PositionTagged{`0},RazorEngine.PositionTagged{`0})">
+            <summary>
+            Checks if the given instances are equal.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RazorEngine.PositionTagged`1.op_Inequality(RazorEngine.PositionTagged{`0},RazorEngine.PositionTagged{`0})">
+            <summary>
+            Checks if the given instances are not equal.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RazorEngine.PositionTagged`1.Position">
+            <summary>
+            The position.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.PositionTagged`1.Value">
+            <summary>
+            The value.
             </summary>
         </member>
         <member name="T:RazorEngine.Razor">
@@ -5123,11 +5658,6 @@
             <param name="key"></param>
             <param name="templateSource"></param>
         </member>
-        <member name="M:RazorEngine.Templating.RazorEngineService.Dispose">
-            <summary>
-            Releases managed resources used by this instance.
-            </summary>
-        </member>
         <member name="M:RazorEngine.Templating.RazorEngineService.Dispose(System.Boolean)">
             <summary>
             Releases managed resources used by this instance.
@@ -5189,13 +5719,14 @@
             <param name="model"></param>
             <param name="viewBag"></param>
         </member>
-        <member name="M:RazorEngine.Templating.RazorEngineService.GetTemplate(RazorEngine.Templating.ITemplateKey,System.Type,System.Object)">
+        <member name="M:RazorEngine.Templating.RazorEngineService.GetTemplate(RazorEngine.Templating.ITemplateKey,System.Type,System.Object,RazorEngine.Templating.DynamicViewBag)">
             <summary>
             Helper method for the legacy <see cref="T:RazorEngine.Templating.TemplateService"/> class.
             </summary>
             <param name="key"></param>
             <param name="modelType"></param>
             <param name="model"></param>
+            <param name="viewbag"></param>
             <returns></returns>
         </member>
         <member name="M:RazorEngine.Templating.RazorEngineService.GetKey(System.String,RazorEngine.Templating.ResolveType,RazorEngine.Templating.ITemplateKey)">
@@ -5301,6 +5832,12 @@
             Initializes a new instance of the <see cref="T:RazorEngine.Templating.DefaultCachingProvider"/> class.
             </summary>
         </member>
+        <member name="M:RazorEngine.Templating.DefaultCachingProvider.#ctor(System.Action{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RazorEngine.Templating.DefaultCachingProvider"/> class.
+            </summary>
+            <param name="registerForCleanup">callback for files which need to be cleaned up.</param>
+        </member>
         <member name="M:RazorEngine.Templating.DefaultCachingProvider.GetModelTypeKey(System.Type)">
             <summary>
             Get the key used within a dictionary for a modelType.
@@ -5361,11 +5898,12 @@
             Defines the required contract for implementing a template.
             </summary>
         </member>
-        <member name="M:RazorEngine.Templating.ITemplate.SetModel(System.Object)">
+        <member name="M:RazorEngine.Templating.ITemplate.SetData(System.Object,RazorEngine.Templating.DynamicViewBag)">
             <summary>
             Set the model of the template (if applicable).
             </summary>
             <param name="model"></param>
+            <param name="viewbag"></param>
         </member>
         <member name="M:RazorEngine.Templating.ITemplate.Execute">
             <summary>
@@ -5407,10 +5945,36 @@
             Sets the cached template service.
             </summary>
         </member>
+        <member name="P:RazorEngine.Templating.ITemplate.Razor">
+            <summary>
+            Sets the cached template service.
+            </summary>
+        </member>
+        <member name="F:RazorEngine.Templating.TemplateBase.modelInit">
+            <summary>
+            Because the old API (TemplateService) is designed in a way to make it impossible to init
+            the model and the Viewbag at the same time (and because of backwards compatibility),
+            we need to call the SetData method twice (only from within TemplateService so we can remove this bool once that has been removed).
+            
+            But the secound call we only need to set the Viewbag, therefore we save the state in this bool.
+            </summary>
+        </member>
+        <member name="F:RazorEngine.Templating.TemplateBase._context">
+            <summary>
+            The current context, filled when we are currently writing a template instance.
+            </summary>
+        </member>
         <member name="M:RazorEngine.Templating.TemplateBase.#ctor">
             <summary>
             Initialises a new instance of <see cref="T:RazorEngine.Templating.TemplateBase"/>.
             </summary>
+        </member>
+        <member name="M:RazorEngine.Templating.TemplateBase.SetData(System.Object,RazorEngine.Templating.DynamicViewBag)">
+            <summary>
+            Set the data for this template.
+            </summary>
+            <param name="model">the model object for the current run.</param>
+            <param name="viewbag">the viewbag for the current run.</param>
         </member>
         <member name="M:RazorEngine.Templating.TemplateBase.SetModel(System.Object)">
             <summary>
@@ -5528,7 +6092,7 @@
         </member>
         <member name="M:RazorEngine.Templating.TemplateBase.WritePositionTaggedLiteral(System.IO.TextWriter,RazorEngine.PositionTagged{System.String})">
             <summary>
-            Writes a <see cref="!:PositionTagged&lt;&gt;"/> literal to the result.
+            Writes a <see cref="T:RazorEngine.PositionTagged`1"/> literal to the result.
             </summary>
             <param name="writer">The writer.</param>
             <param name="value">The literal to be written.</param>
@@ -5570,6 +6134,11 @@
             </summary>
         </member>
         <member name="P:RazorEngine.Templating.TemplateBase.RazorEngine">
+            <summary>
+            Gets or sets the current <see cref="T:RazorEngine.Templating.IRazorEngineService"/> instance.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.TemplateBase.Razor">
             <summary>
             Gets or sets the current <see cref="T:RazorEngine.Templating.IRazorEngineService"/> instance.
             </summary>
@@ -5859,14 +6428,14 @@
         </member>
         <member name="M:RazorEngine.Templating.ExecuteContext.#ctor">
             <summary>
-            Creates a new instance of ExecuteContext with an empty ViewBag.
+            Creates a new instance of ExecuteContext 
             </summary>
         </member>
         <member name="M:RazorEngine.Templating.ExecuteContext.#ctor(RazorEngine.Templating.DynamicViewBag)">
             <summary>
-            Creates a new instance of DynamicViewBag, setting initial values in the ViewBag.
+            Creates a new instance of ExecuteContext.
             </summary>
-            <param name="viewBag">The initial view bag data or NULL for an empty ViewBag.</param>
+            <param name="viewbag">The initial view bag data or NULL for an empty ViewBag.</param>
         </member>
         <member name="M:RazorEngine.Templating.ExecuteContext.DefineSection(System.String,System.Action)">
             <summary>
@@ -5912,23 +6481,19 @@
             Gets the current writer.
             </summary>
         </member>
-        <member name="P:RazorEngine.Templating.ExecuteContext.ViewBag">
-            <summary>
-            Gets the viewbag that allows sharing state.
-            </summary>
-        </member>
         <member name="T:RazorEngine.Templating.IInternalTemplateService">
             <summary>
             A internal contract for the <see cref="T:RazorEngine.Templating.TemplateBase"/> class.
             </summary>
         </member>
-        <member name="M:RazorEngine.Templating.IInternalTemplateService.Resolve(System.String,System.Object,System.Type,RazorEngine.Templating.ResolveType)">
+        <member name="M:RazorEngine.Templating.IInternalTemplateService.Resolve(System.String,System.Object,System.Type,RazorEngine.Templating.DynamicViewBag,RazorEngine.Templating.ResolveType)">
             <summary>
             Resolves the template, this is for internal use only
             </summary>
             <param name="name"></param>
             <param name="model"></param>
             <param name="modelType"></param>
+            <param name="viewbag"></param>
             <param name="resolveType"></param>
             <returns></returns>
         </member>
@@ -5938,11 +6503,10 @@
             </summary>
             <param name="ns">The namespace to be imported.</param>
         </member>
-        <member name="M:RazorEngine.Templating.IInternalTemplateService.CreateExecuteContext(RazorEngine.Templating.DynamicViewBag)">
+        <member name="M:RazorEngine.Templating.IInternalTemplateService.CreateExecuteContext">
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> used to tracking templates.
-            </summary>
-            <param name="viewBag">The view bag.</param>
+            </summary> 
             <returns>The instance of <see cref="T:RazorEngine.Templating.ExecuteContext"/></returns>
         </member>
         <member name="P:RazorEngine.Templating.IInternalTemplateService.Configuration">
@@ -5977,13 +6541,14 @@
             Gets the template type.
             </summary>
         </member>
-        <member name="M:RazorEngine.Templating.InternalTemplateService.Resolve(System.String,System.Object,System.Type,RazorEngine.Templating.ResolveType)">
+        <member name="M:RazorEngine.Templating.InternalTemplateService.Resolve(System.String,System.Object,System.Type,RazorEngine.Templating.DynamicViewBag,RazorEngine.Templating.ResolveType)">
             <summary>
             Resolves the template with the specified name.
             </summary>
             <param name="name">The name of the template type in cache.</param>
             <param name="model">The model or NULL if there is no model for the template.</param>
             <param name="modelType"></param>
+            <param name="viewbag"></param>
             <param name="resolveType"></param>
             <returns>The resolved template.</returns>
         </member>
@@ -5993,11 +6558,10 @@
             </summary>
             <param name="ns">The namespace to be imported.</param>
         </member>
-        <member name="M:RazorEngine.Templating.InternalTemplateService.CreateExecuteContext(RazorEngine.Templating.DynamicViewBag)">
+        <member name="M:RazorEngine.Templating.InternalTemplateService.CreateExecuteContext">
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> for tracking templates.
             </summary>
-            <param name="viewBag">The dynamic view bag.</param>
             <returns>The execute context.</returns>
         </member>
         <member name="P:RazorEngine.Templating.InternalTemplateService.EncodedStringFactory">
@@ -6041,7 +6605,7 @@
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> used to tracking templates.
             </summary>
-            <param name="viewBag">The view bag.</param>
+            <param name="viewBag">This parameter is ignored, set the Viewbag with template.SetData(null, viewBag)</param>
             <returns>The instance of <see cref="T:RazorEngine.Templating.ExecuteContext"/></returns>
         </member>
         <member name="M:RazorEngine.Templating.ITemplateService.Compile(System.String,System.Type,System.String)">
@@ -6263,7 +6827,7 @@
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> for tracking templates.
             </summary>
-            <param name="viewBag">The dynamic view bag.</param>
+            <param name="viewBag">This parameter is ignored, set the Viewbag with template.SetData(null, viewBag)</param>
             <returns>The execute context.</returns>
         </member>
         <member name="M:RazorEngine.Templating.TemplateService.CreateInstanceContext(System.Type)">
@@ -6328,11 +6892,6 @@
             </param>
             <param name="parallel">Flag to determine whether to create template types in parallel.</param>
             <returns>The set of <see cref="T:System.Type"/> instances.</returns>
-        </member>
-        <member name="M:RazorEngine.Templating.TemplateService.Dispose">
-            <summary>
-            Releases managed resources used by this instance.
-            </summary>
         </member>
         <member name="M:RazorEngine.Templating.TemplateService.Dispose(System.Boolean)">
             <summary>
@@ -6666,7 +7225,7 @@
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> used to tracking templates.
             </summary>
-            <param name="viewBag">The view bag.</param>
+            <param name="viewBag">This parameter is ignored, set the Viewbag with template.SetData(null, viewBag)</param>
             <returns>The instance of <see cref="T:RazorEngine.Templating.ExecuteContext"/></returns>
         </member>
         <member name="M:RazorEngine.Templating.IsolatedTemplateService.Compile(System.String,System.Type,System.String)">
@@ -6904,6 +7463,52 @@
             When we search for a layout template.
             </summary>
         </member>
+        <member name="T:RazorEngine.Templating.RazorEngineCompilerError">
+            <summary>
+            Defines a compiler error.
+            </summary>
+        </member>
+        <member name="M:RazorEngine.Templating.RazorEngineCompilerError.#ctor(System.String,System.String,System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Creates a new Compiler error instance.
+            </summary>
+            <param name="errorText"></param>
+            <param name="fileName"></param>
+            <param name="line"></param>
+            <param name="column"></param>
+            <param name="errorNumber"></param>
+            <param name="isWarning"></param>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.ErrorText">
+            <summary>
+            The error text of the error.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.FileName">
+            <summary>
+            The file name of the error source.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.Line">
+            <summary>
+            The line number of the error location
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.Column">
+            <summary>
+            The column number of the error location.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.ErrorNumber">
+            <summary>
+            The number of the error.
+            </summary>
+        </member>
+        <member name="P:RazorEngine.Templating.RazorEngineCompilerError.IsWarning">
+            <summary>
+            Indicates whether the error is a warning.
+            </summary>
+        </member>
         <member name="T:RazorEngine.Templating.TemplateCompilationException">
             <summary>
             Defines an exception that occurs during compilation of the template.
@@ -6970,11 +7575,10 @@
             We need this for creating the templates.
             </summary>
         </member>
-        <member name="M:RazorEngine.Templating.RazorEngineCore.CreateExecuteContext(RazorEngine.Templating.DynamicViewBag)">
+        <member name="M:RazorEngine.Templating.RazorEngineCore.CreateExecuteContext">
             <summary>
             Creates a new <see cref="T:RazorEngine.Templating.ExecuteContext"/> for tracking templates.
             </summary>
-            <param name="viewBag">The dynamic view bag.</param>
             <returns>The execute context.</returns>
         </member>
         <member name="M:RazorEngine.Templating.RazorEngineCore.Compile(RazorEngine.Templating.ITemplateKey,System.Type)">
@@ -6984,12 +7588,13 @@
             <param name="key">The string template.</param>
             <param name="modelType">The model type.</param>
         </member>
-        <member name="M:RazorEngine.Templating.RazorEngineCore.CreateTemplate(RazorEngine.Templating.ICompiledTemplate,System.Object)">
+        <member name="M:RazorEngine.Templating.RazorEngineCore.CreateTemplate(RazorEngine.Templating.ICompiledTemplate,System.Object,RazorEngine.Templating.DynamicViewBag)">
             <summary>
             Creates an instance of <see cref="T:RazorEngine.Templating.ITemplate"/> from the specified string template.
             </summary>
             <param name="template">The compiled template.</param>
             <param name="model">The model instance or NULL if no model exists.</param>
+            <param name="viewbag"></param>
             <returns>An instance of <see cref="T:RazorEngine.Templating.ITemplate"/>.</returns>
         </member>
         <member name="M:RazorEngine.Templating.RazorEngineCore.CreateTemplateType(RazorEngine.Templating.ITemplateSource,System.Type)">
@@ -7382,7 +7987,9 @@
             <summary>
             Initialises a new instance of <see cref="T:RazorEngine.Templating.TemplateParsingException"/>.
             </summary>
-            <param name="error">The <see cref="T:System.Web.Razor.Parser.SyntaxTree.RazorError"/> generated by the parser.</param>
+            <param name="errorMessage">The error message generated by the parser.</param>
+            <param name="characterIndex">The character index of the error.</param>
+            <param name="lineIndex">The line index of the error.</param>
         </member>
         <member name="M:RazorEngine.Templating.TemplateParsingException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>

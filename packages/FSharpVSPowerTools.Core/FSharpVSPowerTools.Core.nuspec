@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>FSharpVSPowerTools.Core</id>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
     <authors>Anh-Dung Phan, Vasily Kirichenko, Denis Ok</authors>
     <owners>Anh-Dung Phan, Vasily Kirichenko, Denis Ok</owners>
     <licenseUrl>https://github.com/fsprojects/VisualFSharpPowerTools/blob/master/LICENSE.txt</licenseUrl>
@@ -11,18 +11,16 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The core project of Visual F# Power Tools includes IDE-agnostic features intended to be used in different F# IDEs and editors.</description>
     <summary>A collection of additional commands for F# in Visual Studio</summary>
-    <releaseNotes>Fix various bugs on Go to Metadata ([#865](https://github.com/fsprojects/VisualFSharpPowerTools/issues/865), [#867](https://github.com/fsprojects/VisualFSharpPowerTools/issues/867), [#891](https://github.com/fsprojects/VisualFSharpPowerTools/issues/891))
-Check graying out unused declarations/opens in a separate coloring stage ([#852](https://github.com/fsprojects/VisualFSharpPowerTools/issues/852))
-Improve performance of Find All References when symbols appear on many documents ([#839](https://github.com/fsprojects/VisualFSharpPowerTools/issues/839))
-Report printf specifiers from user-defined printf-like functions ([#877](https://github.com/fsprojects/VisualFSharpPowerTools/issues/877))
-Implement Next and Previous Highlighted Reference commands ([#899](https://github.com/fsprojects/VisualFSharpPowerTools/issues/899))
-Automatically update depth colorizer when VS theme changes ([#901](https://github.com/fsprojects/VisualFSharpPowerTools/issues/901))
-Integrate AddReferenceInFSI extension as Generate References in F# Interactive feature ([#904](https://github.com/fsprojects/VisualFSharpPowerTools/pull/904))
-No longer reopen generated signatures and go to exact symbol locations on signature files ([#906](https://github.com/fsprojects/VisualFSharpPowerTools/issues/906))</releaseNotes>
+    <releaseNotes>Support operator coloring ([#936](https://github.com/fsprojects/VisualFSharpPowerTools/issues/936))
+Implement Navigate to Source ([#945](https://github.com/fsprojects/VisualFSharpPowerTools/issues/945))
+Implement assembly resolution for FsiReferenceCommand ([#949](https://github.com/fsprojects/VisualFSharpPowerTools/pull/949))
+Fix missing colors in VS 2012 ([#952](https://github.com/fsprojects/VisualFSharpPowerTools/pull/952))
+No longer report synthetic range symbols ([#954](https://github.com/fsprojects/VisualFSharpPowerTools/pull/954))
+Generate signatures of enclosing modules of active patterns ([#955](https://github.com/fsprojects/VisualFSharpPowerTools/pull/955))</releaseNotes>
     <language>en-US</language>
     <tags>F# fsharp formatting editing highlighting navigation refactoring</tags>
     <dependencies>
-      <dependency id="FSharp.Compiler.Service" version="0.0.81" />
+      <dependency id="FSharp.Compiler.Service" version="0.0.87" />
     </dependencies>
   </metadata>
 </package>

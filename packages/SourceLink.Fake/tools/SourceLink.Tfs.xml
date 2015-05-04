@@ -19,10 +19,16 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="P:SourceLink.TfsBuild.Parameters">
 <summary>
  parameters from the Build Definition and Build
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -318,6 +324,9 @@
 <summary>
  wraps a project collection and team project
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 

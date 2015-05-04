@@ -1,3 +1,42 @@
+### New in 0.10.0 (released 2015/04/22)
+* Fixed: renamed methods to follow `GetAll` convention - #771 via @alfhenrik
+* Fixed: helper functions and cleanup to make using Authorization API easier to consume - #786 via @haacked
+
+**Breaking Changes:**
+ - As part of #771 there were many method which were returning collections
+   but the method name made it unclear. You might think that it wasn't much, but 
+   you'd be wrong. So if you have a method that no longer compile,
+   it is likely that you need to set the prefix to `GetAll` to re-disocver that API.
+ - `CommitComment.Position` is now a nullable `int` to prevent serialization issues.
+
+### New in 0.9.0 (released 2015/04/04)
+* New: added `PullRequest.Files` APIs - #752 via @alfhenrik
+* Fixed: `PullRequestRequest` now supports `SortDirection` and `SortProperty` - #752 via @alfhenrik
+* Fixed: `Repository.Create` now enforces a repository name - #763 via @haacked
+* Fixed: corrected naming conventions for endpoints which return a list of results - #766 via @alfhenrik
+* Deprecated: `Repository.GetReadme` and `Repository.GetReadmeHtml` - #759 via @khellang
+
+**Breaking Changes:**
+ - `NewRepository` constructor requires a `name` parameter
+ - `IRepositoriesClient.GetReadme` -> `IRepositoriesClient.Content.GetReadme`
+ - `IRepositoriesClient.GetReadmeHtml` -> `IRepositoriesClient.Content.GetReadmeHtml`
+ - `IFollowersClient.GetFollowingForCurrent` -> `IFollowersClient.GetAllFollowingForCurrent`
+ - `IFollowersClient.GetFollowing` -> `IFollowersClient.GetAllFollowing`
+
+### New in 0.8.0 (released 2015/03/20)
+* New: added `MiscellaneousClient.GetGitIgnoreTemplates` and `MiscellaneousClient.GetGitIgnoreTemplates` APIs - #753 via @haacked
+* New: added `MiscellaneousClient.GetLicenses` and `MiscellaneousClient.GetLicense` preview APIs - #754 via @haacked
+* New: enhancements to `AuthorizationClient`- #731 via @alfhenrik
+* Fixed: handled `unsubscribe` type for Issue events - #751 via @darrencamp
+* Fixes: ensure response models define readonly interfaces - #755 via @khellang
+
+### New in 0.7.3 (released 2015/03/06)
+* New: added `Repository.GetAllPublic` for searching public repositories - #691 via @rms81
+* New: added filters to `Repository.GetAllForCurrent()` - #742 via @shiftkey
+* Fixed: deserializing `EventInfoType` value with underscore now works - #727 via @janovesk
+* Deprecated: `Repository.SubscriberCount` has no data - #739 via @basildk
+* Deprecated: `Repository.Organization` has no data - #726 via @alfhenrik
+
 ### New in 0.7.2 (released 2015/03/01)
 * Fixed: unshipped Orgs Permissions preview API changes due to excessive paging in some situations.
 
@@ -26,7 +65,7 @@
   model class if you need to contructor responses (e.g. for testing)
 - `IResponse` is now a `readonly` interface.
 - `ApiResponse<T>` accepts the strongly typed body as an argument.
-- `IResponse<T> changed to `IApiResponse<T>`.
+- `IResponse<T>` changed to `IApiResponse<T>`.
 
 ### New in 0.6.2 (Released 2015/01/06)
 * New: Added `Assignee` and `Label` to `EventInfo` and `IssueEvent` repsonses - #644 via @thedillonb

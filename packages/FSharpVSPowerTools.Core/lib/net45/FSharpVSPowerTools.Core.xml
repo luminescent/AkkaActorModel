@@ -136,6 +136,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:FSharpVSPowerTools.DepthParser.GetRanges(System.String,System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker})">
 <summary>
  Get the &quot;nested ranges&quot; of source code structures, along with the minimum-number-of-indent spaces inside that span (ignoring comments and #commands).
@@ -353,6 +356,12 @@
 <summary>
  Provides functionality for working with the F# interactive checker running in background
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -712,6 +721,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:FSharpVSPowerTools.XmlDocParser.GetXmlDocables(System.String,System.String,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Compiler.SourceCodeServices.FSharpChecker})">
 <summary>
  Get the list of Xml documentation from current source code
@@ -730,6 +742,9 @@
 <summary>
  Represent an Xml documentation block in source code
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="M:FSharpVSPowerTools.ArrayModule.heads``1(``0[])">
 <summary>
@@ -1966,6 +1981,21 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharpVSPowerTools.OpenDeclarationGetter">
 
 </member>
@@ -1973,6 +2003,12 @@
 
 </member>
 <member name="T:FSharpVSPowerTools.OpenDeclarationModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharpVSPowerTools.OperatorCategorizer">
 
 </member>
 <member name="">
@@ -2057,6 +2093,11 @@
 <member name="">
 
 </member>
+<member name="M:FSharpVSPowerTools.PervasiveModule.op_LessDivideGreater(System.String,System.String)">
+<summary>
+ Path.Combine
+</summary>
+</member>
 <member name="">
 
 </member>
@@ -2124,15 +2165,6 @@
 
 </member>
 <member name="T:FSharpVSPowerTools.SeqModule">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
 
 </member>
 <member name="">

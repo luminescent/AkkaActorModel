@@ -1,8 +1,13 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{12E15393-8CA1-4A26-9B6E-F0BF00BDBFE4}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ActorModelAkka", "src\ActorModelAkka\ActorModelAkka.fsproj", "{452AB4DE-9809-416D-88BD-BDDFDA3457CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RX", "RX", "{B7F021E0-B9EC-4E6B-BBD6-4DE7E6F8B075}"
@@ -81,13 +86,6 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fractal.Remote", "Fractal\F
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MandelbrotSet", "Fractal\MandelbrotSet\MandelbrotSet.csproj", "{0B93FBC3-81E2-437D-8D70-61DE99E78C00}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DBC326A9-225D-482C-AC85-C6DD169FF19D}"
-	ProjectSection(SolutionItems) = preProject
-		Fractal\.nuget\NuGet.Config = Fractal\.nuget\NuGet.Config
-		Fractal\.nuget\NuGet.exe = Fractal\.nuget\NuGet.exe
-		Fractal\.nuget\NuGet.targets = Fractal\.nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fractal.Shared", "Fractal.Shared\Fractal.Shared.fsproj", "{8FDE121E-0654-4E10-9ECE-C3087C2CCA16}"
 EndProject

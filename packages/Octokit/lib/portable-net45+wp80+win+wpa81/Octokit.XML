@@ -171,7 +171,7 @@
             See the <a href="http://developer.github.com/v3/issues/assignees/">Issue Assignees API documentation</a> for more information.
             </remarks>
         </member>
-        <member name="M:Octokit.IAssigneesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IAssigneesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all the available assignees (owner + collaborators) to which issues may be assigned.
             </summary>
@@ -194,7 +194,7 @@
             </summary>
             <param name="apiConnection">An API connection</param>
         </member>
-        <member name="M:Octokit.AssigneesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.AssigneesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all the available assignees (owner + collaborators) to which issues may be assigned.
             </summary>
@@ -256,6 +256,49 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The specified <see cref="T:Octokit.Authorization"/>.</returns>
         </member>
+        <member name="M:Octokit.IAuthorizationsClient.Create(System.String,System.String,Octokit.NewAuthorization)">
+            <summary>
+            Creates a new authorization for the specified OAuth application if an authorization for that application
+            doesn’t already exist for the user; otherwise, it fails.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#get-or-create-an-authorization-for-a-specific-app">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="clientSecret">The client secret</param>
+            <param name="newAuthorization">Describes the new authorization to create</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make this request.
+            </exception>
+            <exception cref="T:Octokit.TwoFactorRequiredException">
+            Thrown when the current account has two-factor authentication enabled and an authentication code is required.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
+        </member>
+        <member name="M:Octokit.IAuthorizationsClient.Create(System.String,System.String,Octokit.NewAuthorization,System.String)">
+            <summary>
+            Creates a new authorization for the specified OAuth application if an authorization for that application
+            doesn’t already exist for the user; otherwise, it fails.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#get-or-create-an-authorization-for-a-specific-app">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="clientSecret">The client secret</param>
+            <param name="twoFactorAuthenticationCode">The two-factor authentication code in response to the current user's previous challenge</param>
+            <param name="newAuthorization">Describes the new authorization to create</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make this request.
+            </exception>
+            <exception cref="T:Octokit.TwoFactorRequiredException">
+            Thrown when the current account has two-factor authentication enabled and an authentication code is required.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
+        </member>
         <member name="M:Octokit.IAuthorizationsClient.GetOrCreateApplicationAuthentication(System.String,System.String,Octokit.NewAuthorization)">
             <summary>
             Creates a new authorization for the specified OAuth application if an authorization for that application doesn’t already 
@@ -299,6 +342,53 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
         </member>
+        <member name="M:Octokit.IAuthorizationsClient.CheckApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Checks the validity of an OAuth token without running afoul of normal rate limits for failed login attempts.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#check-an-authorization">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to check</param>
+            <returns>The valid <see cref="T:Octokit.ApplicationAuthorization"/>.</returns>
+        </member>
+        <member name="M:Octokit.IAuthorizationsClient.ResetApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Resets a valid OAuth token for an OAuth application without end user involvment.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#reset-an-authorization">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to reset</param>
+            <returns>The valid <see cref="T:Octokit.ApplicationAuthorization"/> with a new OAuth token</returns>
+        </member>
+        <member name="M:Octokit.IAuthorizationsClient.RevokeApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Revokes a single OAuth token for an OAuth application.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#revoke-an-authorization-for-an-application">API documentation for more information.</a>
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to revoke</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.IAuthorizationsClient.RevokeAllApplicationAuthentications(System.String)">
+            <summary>
+            Revokes every OAuth token for an OAuth application.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#revoke-all-authorizations-for-an-application">API documentation for more information.</a>
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
         <member name="M:Octokit.IAuthorizationsClient.Update(System.Int32,Octokit.AuthorizationUpdate)">
             <summary>
             Updates the specified <see cref="T:Octokit.Authorization"/>.
@@ -326,6 +416,23 @@
             documentation</a> for more details.
             </remarks>
             <param name="id">The system-wide ID of the authorization to delete</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make the request.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.IAuthorizationsClient.Delete(System.Int32,System.String)">
+            <summary>
+            Deletes the specified <see cref="T:Octokit.Authorization"/>.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#delete-an-authorization">API 
+            documentation</a> for more details.
+            </remarks>
+            <param name="id">The system-wide ID of the authorization to delete</param>
+            <param name="twoFactorAuthenticationCode">Two factor authorization code</param>
             <exception cref="T:Octokit.AuthorizationException">
             Thrown when the current user does not have permission to make the request.
             </exception>
@@ -366,6 +473,49 @@
             </exception>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The specified <see cref="T:Octokit.Authorization"/>.</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.Create(System.String,System.String,Octokit.NewAuthorization)">
+            <summary>
+            Creates a new authorization for the specified OAuth application if an authorization for that application
+            doesn’t already exist for the user; otherwise, it fails.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#get-or-create-an-authorization-for-a-specific-app">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="clientSecret">The client secret</param>
+            <param name="newAuthorization">Describes the new authorization to create</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make this request.
+            </exception>
+            <exception cref="T:Octokit.TwoFactorRequiredException">
+            Thrown when the current account has two-factor authentication enabled and an authentication code is required.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.Create(System.String,System.String,Octokit.NewAuthorization,System.String)">
+            <summary>
+            Creates a new authorization for the specified OAuth application if an authorization for that application
+            doesn’t already exist for the user; otherwise, it fails.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#get-or-create-an-authorization-for-a-specific-app">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="clientSecret">The client secret</param>
+            <param name="twoFactorAuthenticationCode">The two-factor authentication code in response to the current user's previous challenge</param>
+            <param name="newAuthorization">Describes the new authorization to create</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make this request.
+            </exception>
+            <exception cref="T:Octokit.TwoFactorRequiredException">
+            Thrown when the current account has two-factor authentication enabled and an authentication code is required.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
         </member>
         <member name="M:Octokit.AuthorizationsClient.GetOrCreateApplicationAuthentication(System.String,System.String,Octokit.NewAuthorization)">
             <summary>
@@ -410,6 +560,53 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The created <see cref="T:Octokit.Authorization"/>.</returns>
         </member>
+        <member name="M:Octokit.AuthorizationsClient.CheckApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Checks the validity of an OAuth token without running afoul of normal rate limits for failed login attempts.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#check-an-authorization">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">Client ID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to check</param>
+            <returns>The valid <see cref="T:Octokit.ApplicationAuthorization"/>.</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.ResetApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Resets a valid OAuth token for an OAuth application without end user involvment.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#reset-an-authorization">API documentation</a> for more information.
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to reset</param>
+            <returns>The valid <see cref="T:Octokit.ApplicationAuthorization"/> with a new OAuth token</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.RevokeApplicationAuthentication(System.String,System.String)">
+            <summary>
+            Revokes a single OAuth token for an OAuth application.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#revoke-an-authorization-for-an-application">API documentation for more information.</a>
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <param name="accessToken">The OAuth token to revoke</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.RevokeAllApplicationAuthentications(System.String)">
+            <summary>
+            Revokes every OAuth token for an OAuth application.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="https://developer.github.com/v3/oauth_authorizations/#revoke-all-authorizations-for-an-application">API documentation for more information.</a>
+            </remarks>
+            <param name="clientId">ClientID of the OAuth application for the token</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
         <member name="M:Octokit.AuthorizationsClient.Update(System.Int32,Octokit.AuthorizationUpdate)">
             <summary>
             Updates the specified <see cref="T:Octokit.Authorization"/>.
@@ -437,6 +634,23 @@
             documentation</a> for more details.
             </remarks>
             <param name="id">The system-wide ID of the authorization to delete</param>
+            <exception cref="T:Octokit.AuthorizationException">
+            Thrown when the current user does not have permission to make the request.
+            </exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.AuthorizationsClient.Delete(System.Int32,System.String)">
+            <summary>
+            Deletes the specified <see cref="T:Octokit.Authorization"/>.
+            </summary>
+            <remarks>
+            This method requires authentication.
+            See the <a href="http://developer.github.com/v3/oauth/#delete-an-authorization">API 
+            documentation</a> for more details.
+            </remarks>
+            <param name="id">The system-wide ID of the authorization to delete</param>
+            <param name="twoFactorAuthenticationCode">Two factor authorization code</param>
             <exception cref="T:Octokit.AuthorizationException">
             Thrown when the current user does not have permission to make the request.
             </exception>
@@ -780,7 +994,7 @@
             <param name="organization">The name of the organization</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s for the particular organization.</returns>
         </member>
-        <member name="M:Octokit.IEventsClient.GetUserReceived(System.String)">
+        <member name="M:Octokit.IEventsClient.GetAllUserReceived(System.String)">
             <summary>
             Gets all the events that have been received by a given user.
             </summary>
@@ -790,7 +1004,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has received.</returns>
         </member>
-        <member name="M:Octokit.IEventsClient.GetUserReceivedPublic(System.String)">
+        <member name="M:Octokit.IEventsClient.GetAllUserReceivedPublic(System.String)">
             <summary>
             Gets all the events that have been received by a given user.
             </summary>
@@ -800,7 +1014,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has received.</returns>
         </member>
-        <member name="M:Octokit.IEventsClient.GetUserPerformed(System.String)">
+        <member name="M:Octokit.IEventsClient.GetAllUserPerformed(System.String)">
             <summary>
             Gets all the events that have been performed by a given user.
             </summary>
@@ -810,7 +1024,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has performed.</returns>
         </member>
-        <member name="M:Octokit.IEventsClient.GetUserPerformedPublic(System.String)">
+        <member name="M:Octokit.IEventsClient.GetAllUserPerformedPublic(System.String)">
             <summary>
             Gets all the public events that have been performed by a given user.
             </summary>
@@ -820,7 +1034,7 @@
             <param name="user">The login of the user</param>
             <returns>All the public <see cref="T:Octokit.Activity"/>s that a particular user has performed.</returns>
         </member>
-        <member name="M:Octokit.IEventsClient.GetForAnOrganization(System.String,System.String)">
+        <member name="M:Octokit.IEventsClient.GetAllForAnOrganization(System.String,System.String)">
             <summary>
             Gets all the events that are associated with an organization.
             </summary>
@@ -878,7 +1092,7 @@
             <param name="organization">The name of the organization</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s for the particular organization.</returns>
         </member>
-        <member name="M:Octokit.EventsClient.GetUserReceived(System.String)">
+        <member name="M:Octokit.EventsClient.GetAllUserReceived(System.String)">
             <summary>
             Gets all the events that have been received by a given user.
             </summary>
@@ -888,7 +1102,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has received.</returns>
         </member>
-        <member name="M:Octokit.EventsClient.GetUserReceivedPublic(System.String)">
+        <member name="M:Octokit.EventsClient.GetAllUserReceivedPublic(System.String)">
             <summary>
             Gets all the events that have been received by a given user.
             </summary>
@@ -898,7 +1112,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has received.</returns>
         </member>
-        <member name="M:Octokit.EventsClient.GetUserPerformed(System.String)">
+        <member name="M:Octokit.EventsClient.GetAllUserPerformed(System.String)">
             <summary>
             Gets all the events that have been performed by a given user.
             </summary>
@@ -908,7 +1122,7 @@
             <param name="user">The login of the user</param>
             <returns>All the <see cref="T:Octokit.Activity"/>s that a particular user has performed.</returns>
         </member>
-        <member name="M:Octokit.EventsClient.GetUserPerformedPublic(System.String)">
+        <member name="M:Octokit.EventsClient.GetAllUserPerformedPublic(System.String)">
             <summary>
             Gets all the public events that have been performed by a given user.
             </summary>
@@ -918,7 +1132,7 @@
             <param name="user">The login of the user</param>
             <returns>All the public <see cref="T:Octokit.Activity"/>s that a particular user has performed.</returns>
         </member>
-        <member name="M:Octokit.EventsClient.GetForAnOrganization(System.String,System.String)">
+        <member name="M:Octokit.EventsClient.GetAllForAnOrganization(System.String,System.String)">
             <summary>
             Gets all the events that are associated with an organization.
             </summary>
@@ -1004,7 +1218,7 @@
             </remarks>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.User"/>s that follow the passed user.</returns>
         </member>
-        <member name="M:Octokit.IFollowersClient.GetFollowingForCurrent">
+        <member name="M:Octokit.IFollowersClient.GetAllFollowingForCurrent">
             <summary>
             List who the authenticated user is following
             </summary>
@@ -1013,7 +1227,7 @@
             </remarks>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.User"/>s that the authenticated user follows.</returns>
         </member>
-        <member name="M:Octokit.IFollowersClient.GetFollowing(System.String)">
+        <member name="M:Octokit.IFollowersClient.GetAllFollowing(System.String)">
             <summary>
             List who a user is following
             </summary>
@@ -1089,7 +1303,7 @@
             </remarks>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.User"/>s that follow the passed user.</returns>
         </member>
-        <member name="M:Octokit.FollowersClient.GetFollowingForCurrent">
+        <member name="M:Octokit.FollowersClient.GetAllFollowingForCurrent">
             <summary>
             List who the authenticated user is following
             </summary>
@@ -1098,7 +1312,7 @@
             </remarks>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.User"/>s that the authenticated user follows.</returns>
         </member>
-        <member name="M:Octokit.FollowersClient.GetFollowing(System.String)">
+        <member name="M:Octokit.FollowersClient.GetAllFollowing(System.String)">
             <summary>
             List who a user is following
             </summary>
@@ -1501,7 +1715,7 @@
             <param name="number">The issue number</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssueCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IIssueCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets Issue Comments for a repository.
             </summary>
@@ -1510,7 +1724,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssueCommentsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IIssueCommentsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets Issue Comments for a specified Issue.
             </summary>
@@ -1636,7 +1850,7 @@
             <param name="request">Used to filter and sort the list of issues returned</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssuesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IIssuesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all open issues assigned to the authenticated user for the repository.
             </summary>
@@ -1647,7 +1861,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssuesClient.GetForRepository(System.String,System.String,Octokit.RepositoryIssueRequest)">
+        <member name="M:Octokit.IIssuesClient.GetAllForRepository(System.String,System.String,Octokit.RepositoryIssueRequest)">
             <summary>
             Gets issues for a repository.
             </summary>
@@ -1718,7 +1932,7 @@
             See the <a href="http://developer.github.com/v3/issues/events/">Issue Events API documentation</a> for more information.
             </remarks>
         </member>
-        <member name="M:Octokit.IIssuesEventsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IIssuesEventsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets all events for the issue.
             </summary>
@@ -1730,7 +1944,7 @@
             <param name="number">The issue number</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssuesEventsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IIssuesEventsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all events for the repository.
             </summary>
@@ -1753,7 +1967,7 @@
             <param name="number">The event id</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssuesLabelsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IIssuesLabelsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets all  labels for the issue.
             </summary>
@@ -1765,7 +1979,7 @@
             <param name="number">The number of the issue</param>
             <returns>The list of labels</returns>
         </member>
-        <member name="M:Octokit.IIssuesLabelsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IIssuesLabelsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all  labels for the repository.
             </summary>
@@ -1876,7 +2090,7 @@
             <param name="number">The number of the issue</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IIssuesLabelsClient.GetForMilestone(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IIssuesLabelsClient.GetAllForMilestone(System.String,System.String,System.Int32)">
             <summary>
             Gets labels for every issue in a milestone
             </summary>
@@ -1905,7 +2119,7 @@
             </remarks>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IMilestonesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IMilestonesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all open milestones for the repository.
             </summary>
@@ -1916,7 +2130,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IMilestonesClient.GetForRepository(System.String,System.String,Octokit.MilestoneRequest)">
+        <member name="M:Octokit.IMilestonesClient.GetAllForRepository(System.String,System.String,Octokit.MilestoneRequest)">
             <summary>
             Gets all open milestones for the repository.
             </summary>
@@ -1971,7 +2185,7 @@
             See the <a href="http://developer.github.com/v3/misc/">Miscellaneous API documentation</a> for more details.
             </remarks>
         </member>
-        <member name="M:Octokit.IMiscellaneousClient.GetEmojis">
+        <member name="M:Octokit.IMiscellaneousClient.GetAllEmojis">
             <summary>
             Gets all the emojis available to use on GitHub.
             </summary>
@@ -1985,6 +2199,34 @@
             <param name="markdown">A plain-text Markdown document</param>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The rendered Markdown.</returns>
+        </member>
+        <member name="M:Octokit.IMiscellaneousClient.GetAllGitIgnoreTemplates">
+            <summary>
+            List all templates available to pass as an option when creating a repository.
+            </summary>
+            <returns>A list of template names</returns>
+        </member>
+        <member name="M:Octokit.IMiscellaneousClient.GetGitIgnoreTemplate(System.String)">
+            <summary>
+            Retrieves the source for a single GitIgnore template
+            </summary>
+            <param name="templateName"></param>
+            <returns>A template and its source</returns>
+        </member>
+        <member name="M:Octokit.IMiscellaneousClient.GetAllLicenses">
+            <summary>
+            Returns a list of the licenses shown in the license picker on GitHub.com. This is not a comprehensive
+            list of all possible OSS licenses.
+            </summary>
+            <remarks>This is a PREVIEW API! Use it at your own risk.</remarks>
+            <returns>A list of licenses available on the site</returns>
+        </member>
+        <member name="M:Octokit.IMiscellaneousClient.GetLicense(System.String)">
+            <summary>
+            Retrieves a license based on the licence key such as "mit"
+            </summary>
+            <param name="key"></param>
+            <returns>A <see cref="T:Octokit.License"/> that includes the license key, text, and attributes of the license.</returns>
         </member>
         <member name="T:Octokit.INotificationsClient">
             <summary>
@@ -2158,7 +2400,7 @@
             <param name="filter">The user filter</param>
             <returns>The users</returns>
         </member>
-        <member name="M:Octokit.IOrganizationMembersClient.GetPublic(System.String)">
+        <member name="M:Octokit.IOrganizationMembersClient.GetAllPublic(System.String)">
             <summary>
             List all users who have publicized their membership of the organization.
             </summary>
@@ -2368,7 +2610,7 @@
             </remarks>
             <returns>A <see cref="T:Octokit.PullRequest"/> result</returns>
         </member>
-        <member name="M:Octokit.IPullRequestsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IPullRequestsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Get all open pull requests for the repository.
             </summary>
@@ -2379,7 +2621,7 @@
             <param name="name">The name of the repository</param>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.PullRequest"/>s which are currently open</returns>
         </member>
-        <member name="M:Octokit.IPullRequestsClient.GetForRepository(System.String,System.String,Octokit.PullRequestRequest)">
+        <member name="M:Octokit.IPullRequestsClient.GetAllForRepository(System.String,System.String,Octokit.PullRequestRequest)">
             <summary>
             Query pull requests for the repository based on criteria
             </summary>
@@ -2443,6 +2685,16 @@
             <param name="name">The name of the repository</param>
             <param name="number">The pull request number</param>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.Commit"/>s which are part of this pull request</returns>
+        </member>
+        <member name="M:Octokit.IPullRequestsClient.Files(System.String,System.String,System.Int32)">
+            <summary>
+            Get the list of files on a pull request.
+            </summary>
+            <remarks>https://developer.github.com/v3/pulls/#list-pull-requests-files</remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="name">The name of the repository</param>
+            <param name="number">The pull request number</param>
+            <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> which are part of this pull request</returns>
         </member>
         <member name="P:Octokit.IPullRequestsClient.Comment">
             <summary>
@@ -2522,7 +2774,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IReleasesClient.GetAssets(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IReleasesClient.GetAllAssets(System.String,System.String,System.Int32)">
             <summary>
             Gets all <see cref="T:Octokit.ReleaseAsset"/> for the specified release of the specified repository.
             </summary>
@@ -2639,6 +2891,18 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.Repository"/></returns>
         </member>
+        <member name="M:Octokit.IRepositoriesClient.GetAllPublic">
+            <summary>
+            Gets all public repositories.
+            </summary>
+            <remarks>
+            See the <a href="https://developer.github.com/v3/repos/#list-all-public-repositories">API documentation</a> for more information.
+            The default page size on GitHub.com is 30.
+            </remarks>
+            <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
+        </member>
         <member name="M:Octokit.IRepositoriesClient.GetAllForCurrent">
             <summary>
             Gets all repositories owned by the current user.
@@ -2647,6 +2911,19 @@
             See the <a href="http://developer.github.com/v3/repos/#list-your-repositories">API documentation</a> for more information.
             The default page size on GitHub.com is 30.
             </remarks>
+            <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
+        </member>
+        <member name="M:Octokit.IRepositoriesClient.GetAllForCurrent(Octokit.RepositoryRequest)">
+            <summary>
+            Gets all repositories owned by the current user.
+            </summary>
+            <remarks>
+            See the <a href="http://developer.github.com/v3/repos/#list-your-repositories">API documentation</a> for more information.
+            The default page size on GitHub.com is 30.
+            </remarks>
+            <param name="request">Search parameters to filter results on</param>
             <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
@@ -2672,30 +2949,6 @@
             </remarks>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
-        </member>
-        <member name="M:Octokit.IRepositoriesClient.GetReadme(System.String,System.String)">
-            <summary>
-            Gets the preferred README for the specified repository.
-            </summary>
-            <remarks>
-            See the <a href="http://developer.github.com/v3/repos/contents/#get-the-readme">API documentation</a> for more information.
-            </remarks>
-            <param name="owner">The owner of the repository</param>
-            <param name="name">The name of the repository</param>
-            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:Octokit.IRepositoriesClient.GetReadmeHtml(System.String,System.String)">
-            <summary>
-            Gets the perferred README's HTML for the specified repository.
-            </summary>
-            <remarks>
-            See the <a href="http://developer.github.com/v3/repos/contents/#get-the-readme">API documentation</a> for more information.
-            </remarks>
-            <param name="owner">The owner of the repository</param>
-            <param name="name">The name of the repository</param>
-            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
-            <returns></returns>
         </member>
         <member name="M:Octokit.IRepositoriesClient.GetAllBranches(System.String,System.String)">
             <summary>
@@ -2873,7 +3126,7 @@
             Client for accessing contents of files within a repository as base64 encoded content.
             </summary>
         </member>
-        <member name="M:Octokit.IRepositoryContentsClient.GetContents(System.String,System.String,System.String)">
+        <member name="M:Octokit.IRepositoryContentsClient.GetAllContents(System.String,System.String,System.String)">
             <summary>
             Returns the contents of a file or directory in a repository.
             </summary>
@@ -3018,7 +3271,7 @@
             <param name="number">The issue number</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssueCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IssueCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets Issue Comments for a repository.
             </summary>
@@ -3027,7 +3280,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssueCommentsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IssueCommentsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets Issue Comments for a specified Issue.
             </summary>
@@ -3159,7 +3412,7 @@
             <param name="request">Used to filter and sort the list of issues returned</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssuesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IssuesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all open issues assigned to the authenticated user for the repository.
             </summary>
@@ -3170,7 +3423,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssuesClient.GetForRepository(System.String,System.String,Octokit.RepositoryIssueRequest)">
+        <member name="M:Octokit.IssuesClient.GetAllForRepository(System.String,System.String,Octokit.RepositoryIssueRequest)">
             <summary>
             Gets issues for a repository.
             </summary>
@@ -3233,7 +3486,7 @@
             Client for managing comments.
             </summary>
         </member>
-        <member name="M:Octokit.IssuesLabelsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IssuesLabelsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets all  labels for the issue.
             </summary>
@@ -3245,7 +3498,7 @@
             <param name="number">The number of the issue</param>
             <returns>The list of labels</returns>
         </member>
-        <member name="M:Octokit.IssuesLabelsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IssuesLabelsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all  labels for the repository.
             </summary>
@@ -3356,7 +3609,7 @@
             <param name="number">The number of the issue</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssuesLabelsClient.GetForMilestone(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IssuesLabelsClient.GetAllForMilestone(System.String,System.String,System.Int32)">
             <summary>
             Gets labels for every issue in a milestone
             </summary>
@@ -3582,7 +3835,7 @@
             See the <a href="http://developer.github.com/v3/issues/events/">Issue Events API documentation</a> for more information.
             </remarks>
         </member>
-        <member name="M:Octokit.IssuesEventsClient.GetForIssue(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.IssuesEventsClient.GetAllForIssue(System.String,System.String,System.Int32)">
             <summary>
             Gets all events for the issue.
             </summary>
@@ -3594,7 +3847,7 @@
             <param name="number">The issue number</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IssuesEventsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IssuesEventsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all events for the repository.
             </summary>
@@ -3686,7 +3939,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A list of the orgs's teams <see cref="T:Octokit.Team"/>s.</returns>
         </member>
-        <member name="M:Octokit.ITeamsClient.GetMembers(System.Int32)">
+        <member name="M:Octokit.ITeamsClient.GetAllMembers(System.Int32)">
             <summary>
             Returns all members of the given team. 
             </summary>
@@ -3740,7 +3993,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns></returns>
         </member>
-        <member name="M:Octokit.ITeamsClient.GetRepositories(System.Int32)">
+        <member name="M:Octokit.ITeamsClient.GetAllRepositories(System.Int32)">
             <summary>
             Returns all team's repositories.
             </summary>
@@ -3899,7 +4152,7 @@
             </remarks>
             <returns></returns>
         </member>
-        <member name="M:Octokit.MilestonesClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.MilestonesClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets all open milestones for the repository.
             </summary>
@@ -3910,7 +4163,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.MilestonesClient.GetForRepository(System.String,System.String,Octokit.MilestoneRequest)">
+        <member name="M:Octokit.MilestonesClient.GetAllForRepository(System.String,System.String,Octokit.MilestoneRequest)">
             <summary>
             Gets all open milestones for the repository.
             </summary>
@@ -3967,11 +4220,11 @@
         </member>
         <member name="M:Octokit.MiscellaneousClient.#ctor(Octokit.IConnection)">
             <summary>
-            Initializes a new GitHub miscellaneous API client.
+                Initializes a new GitHub miscellaneous API client.
             </summary>
             <param name="connection">An API connection</param>
         </member>
-        <member name="M:Octokit.MiscellaneousClient.GetEmojis">
+        <member name="M:Octokit.MiscellaneousClient.GetAllEmojis">
             <summary>
             Gets all the emojis available to use on GitHub.
             </summary>
@@ -3985,6 +4238,34 @@
             <param name="markdown">A plain-text Markdown document</param>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>The rendered Markdown.</returns>
+        </member>
+        <member name="M:Octokit.MiscellaneousClient.GetAllGitIgnoreTemplates">
+            <summary>
+            List all templates available to pass as an option when creating a repository.
+            </summary>
+            <returns>A list of template names</returns>
+        </member>
+        <member name="M:Octokit.MiscellaneousClient.GetGitIgnoreTemplate(System.String)">
+            <summary>
+            Retrieves the source for a single GitIgnore template
+            </summary>
+            <param name="templateName"></param>
+            <returns>A template and its source</returns>
+        </member>
+        <member name="M:Octokit.MiscellaneousClient.GetAllLicenses">
+            <summary>
+            Returns a list of the licenses shown in the license picker on GitHub.com. This is not a comprehensive
+            list of all possible OSS licenses.
+            </summary>
+            <remarks>This is a PREVIEW API! Use it at your own risk.</remarks>
+            <returns>A list of licenses available on the site</returns>
+        </member>
+        <member name="M:Octokit.MiscellaneousClient.GetLicense(System.String)">
+            <summary>
+            Retrieves a license based on the licence key such as "mit"
+            </summary>
+            <param name="key"></param>
+            <returns>A <see cref="T:Octokit.License"/> that includes the license key, text, and attributes of the license.</returns>
         </member>
         <member name="T:Octokit.NotificationsClient">
             <summary>
@@ -4188,7 +4469,7 @@
             <param name="filter">The user filter</param>
             <returns>The users</returns>
         </member>
-        <member name="M:Octokit.OrganizationMembersClient.GetPublic(System.String)">
+        <member name="M:Octokit.OrganizationMembersClient.GetAllPublic(System.String)">
             <summary>
             List all users who have publicized their membership of the organization.
             </summary>
@@ -4410,7 +4691,7 @@
             </remarks>
             <returns>A <see cref="T:Octokit.PullRequest"/> result</returns>
         </member>
-        <member name="M:Octokit.PullRequestsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.PullRequestsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Get all open pull requests for the repository.
             </summary>
@@ -4421,7 +4702,7 @@
             <param name="name">The name of the repository</param>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.PullRequest"/>s which are currently open</returns>
         </member>
-        <member name="M:Octokit.PullRequestsClient.GetForRepository(System.String,System.String,Octokit.PullRequestRequest)">
+        <member name="M:Octokit.PullRequestsClient.GetAllForRepository(System.String,System.String,Octokit.PullRequestRequest)">
             <summary>
             Query pull requests for the repository based on criteria
             </summary>
@@ -4485,6 +4766,16 @@
             <param name="name">The name of the repository</param>
             <param name="number">The pull request number</param>
             <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of <see cref="T:Octokit.Commit"/>s which are part of this pull request</returns>
+        </member>
+        <member name="M:Octokit.PullRequestsClient.Files(System.String,System.String,System.Int32)">
+            <summary>
+            Get the list of files on a pull request.
+            </summary>
+            <remarks>https://developer.github.com/v3/pulls/#list-pull-requests-files</remarks>
+            <param name="owner">The owner of the repository</param>
+            <param name="name">The name of the repository</param>
+            <param name="number">The pull request number</param>
+            <returns>A <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> which are part of this pull request</returns>
         </member>
         <member name="P:Octokit.PullRequestsClient.Comment">
             <summary>
@@ -4570,7 +4861,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns></returns>
         </member>
-        <member name="M:Octokit.ReleasesClient.GetAssets(System.String,System.String,System.Int32)">
+        <member name="M:Octokit.ReleasesClient.GetAllAssets(System.String,System.String,System.Int32)">
             <summary>
             Gets all <see cref="T:Octokit.ReleaseAsset"/> for the specified release of the specified repository.
             </summary>
@@ -4702,6 +4993,18 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.Repository"/></returns>
         </member>
+        <member name="M:Octokit.RepositoriesClient.GetAllPublic">
+            <summary>
+            Gets all public repositories.
+            </summary>
+            <remarks>
+            See the <a href="https://developer.github.com/v3/repos/#list-all-public-repositories">API documentation</a> for more information.
+            The default page size on GitHub.com is 30.
+            </remarks>
+            <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
+        </member>
         <member name="M:Octokit.RepositoriesClient.GetAllForCurrent">
             <summary>
             Gets all repositories owned by the current user.
@@ -4710,6 +5013,19 @@
             See the <a href="http://developer.github.com/v3/repos/#list-your-repositories">API documentation</a> for more information.
             The default page size on GitHub.com is 30.
             </remarks>
+            <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
+            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
+            <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
+        </member>
+        <member name="M:Octokit.RepositoriesClient.GetAllForCurrent(Octokit.RepositoryRequest)">
+            <summary>
+            Gets all repositories owned by the current user.
+            </summary>
+            <remarks>
+            See the <a href="http://developer.github.com/v3/repos/#list-your-repositories">API documentation</a> for more information.
+            The default page size on GitHub.com is 30.
+            </remarks>
+            <param name="request">Search parameters to filter results on</param>
             <exception cref="T:Octokit.AuthorizationException">Thrown if the client is not authenticated.</exception>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
@@ -4735,30 +5051,6 @@
             </remarks>
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A <see cref="T:Octokit.IReadOnlyPagedCollection`1"/> of <see cref="T:Octokit.Repository"/>.</returns>
-        </member>
-        <member name="M:Octokit.RepositoriesClient.GetReadme(System.String,System.String)">
-            <summary>
-            Gets the preferred README for the specified repository.
-            </summary>
-            <remarks>
-            See the <a href="http://developer.github.com/v3/repos/contents/#get-the-readme">API documentation</a> for more information.
-            </remarks>
-            <param name="owner">The owner of the repository</param>
-            <param name="name">The name of the repository</param>
-            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:Octokit.RepositoriesClient.GetReadmeHtml(System.String,System.String)">
-            <summary>
-            Gets the perferred README's HTML for the specified repository.
-            </summary>
-            <remarks>
-            See the <a href="http://developer.github.com/v3/repos/contents/#get-the-readme">API documentation</a> for more information.
-            </remarks>
-            <param name="owner">The owner of the repository</param>
-            <param name="name">The name of the repository</param>
-            <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
-            <returns></returns>
         </member>
         <member name="M:Octokit.RepositoriesClient.GetAllBranches(System.String,System.String)">
             <summary>
@@ -4927,7 +5219,7 @@
             Client for accessing contents of files within a repository as base64 encoded content.
             </summary>
         </member>
-        <member name="M:Octokit.RepositoryContentsClient.GetContents(System.String,System.String,System.String)">
+        <member name="M:Octokit.RepositoryContentsClient.GetAllContents(System.String,System.String,System.String)">
             <summary>
             Returns the contents of a file or directory in a repository.
             </summary>
@@ -5359,7 +5651,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns>A list of the orgs's teams <see cref="T:Octokit.Team"/>s.</returns>
         </member>
-        <member name="M:Octokit.TeamsClient.GetMembers(System.Int32)">
+        <member name="M:Octokit.TeamsClient.GetAllMembers(System.Int32)">
             <summary>
             Returns all members of the given team. 
             </summary>
@@ -5413,7 +5705,7 @@
             <exception cref="T:Octokit.ApiException">Thrown when a general API error occurs.</exception>
             <returns></returns>
         </member>
-        <member name="M:Octokit.TeamsClient.GetRepositories(System.Int32)">
+        <member name="M:Octokit.TeamsClient.GetAllRepositories(System.Int32)">
             <summary>
             Returns all team's repositories.
             </summary>
@@ -5699,15 +5991,43 @@
             <param name="response">The HTTP payload from the server</param>
             <param name="innerException">The inner exception</param>
         </member>
+        <member name="M:Octokit.TwoFactorAuthorizationException.#ctor(Octokit.TwoFactorType,System.Exception)">
+            <summary>
+            Constructs an instance of TwoFactorRequiredException.
+            </summary>
+            <param name="twoFactorType">Expected 2FA response type</param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="M:Octokit.TwoFactorAuthorizationException.#ctor(Octokit.IResponse,Octokit.TwoFactorType)">
+            <summary>
+            Constructs an instance of TwoFactorRequiredException.
+            </summary>
+            <param name="response">The HTTP payload from the server</param>
+            <param name="twoFactorType">Expected 2FA response type</param>
+        </member>
+        <member name="M:Octokit.TwoFactorAuthorizationException.#ctor(Octokit.IResponse,Octokit.TwoFactorType,System.Exception)">
+            <summary>
+            Constructs an instance of TwoFactorRequiredException.
+            </summary>
+            <param name="response">The HTTP payload from the server</param>
+            <param name="twoFactorType">Expected 2FA response type</param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="P:Octokit.TwoFactorAuthorizationException.TwoFactorType">
+            <summary>
+            Expected 2FA response type
+            </summary>
+        </member>
         <member name="M:Octokit.TwoFactorChallengeFailedException.#ctor">
             <summary>
             Constructs an instance of TwoFactorChallengeFailedException
             </summary>
         </member>
-        <member name="M:Octokit.TwoFactorChallengeFailedException.#ctor(System.Exception)">
+        <member name="M:Octokit.TwoFactorChallengeFailedException.#ctor(System.String,Octokit.ApiException)">
             <summary>
             Constructs an instance of TwoFactorChallengeFailedException
             </summary>
+            <param name="authorizationCode">The authorization code that was incorrect</param>
             <param name="innerException">The inner exception</param>
         </member>
         <member name="T:Octokit.TwoFactorRequiredException">
@@ -5732,36 +6052,6 @@
             </summary>
             <param name="response">The HTTP payload from the server</param>
             <param name="twoFactorType">Expected 2FA response type</param>
-        </member>
-        <member name="P:Octokit.TwoFactorRequiredException.TwoFactorType">
-            <summary>
-            Expected 2FA response type
-            </summary>
-        </member>
-        <member name="T:Octokit.TwoFactorType">
-            <summary>
-            Methods for receiving 2FA authentication codes
-            </summary>
-        </member>
-        <member name="F:Octokit.TwoFactorType.None">
-            <summary>
-            No method configured
-            </summary>
-        </member>
-        <member name="F:Octokit.TwoFactorType.Unknown">
-            <summary>
-            Unknown method
-            </summary>
-        </member>
-        <member name="F:Octokit.TwoFactorType.Sms">
-            <summary>
-            Receive via SMS
-            </summary>
-        </member>
-        <member name="F:Octokit.TwoFactorType.AuthenticatorApp">
-            <summary>
-            Receive via application
-            </summary>
         </member>
         <member name="T:Octokit.ApiExtensions">
             <summary>
@@ -5843,6 +6133,13 @@
             <summary>
             Class for retrieving GitHub ApI URLs
             </summary>
+        </member>
+        <member name="M:Octokit.ApiUrls.AllPublicRepositories">
+            <summary>
+            Returns the <see cref="T:System.Uri"/> that returns all public repositories in
+            response to a GET request.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Octokit.ApiUrls.Repositories">
             <summary>
@@ -7184,6 +7481,19 @@
             <returns>The created API resource.</returns>
             <exception cref="T:Octokit.ApiException">Thrown when an API error occurs.</exception>
         </member>
+        <member name="M:Octokit.IApiConnection.Post``1(System.Uri,System.Object,System.String,System.String,System.String)">
+            <summary>
+            Creates a new API resource in the list at the specified URI.
+            </summary>
+            <typeparam name="T">The API resource's type.</typeparam>
+            <param name="uri">URI of the API resource to get</param>
+            <param name="data">Object that describes the new API resource; this will be serialized and used as the request's body</param>
+            <param name="accepts">Accept header to use for the API request</param>
+            <param name="contentType">Content type of the API request</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Authentication Code</param>
+            <returns>The created API resource.</returns>
+            <exception cref="T:Octokit.ApiException">Thrown when an API error occurs.</exception>
+        </member>
         <member name="M:Octokit.IApiConnection.Post``1(System.Uri,System.Object,System.String,System.String,System.TimeSpan)">
             <summary>
             Creates a new API resource in the list at the specified URI.
@@ -7270,6 +7580,14 @@
             Deletes the API object at the specified URI.
             </summary>
             <param name="uri">URI of the API resource to delete</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.IApiConnection.Delete(System.Uri,System.String)">
+            <summary>
+            Deletes the API object at the specified URI.
+            </summary>
+            <param name="uri">URI of the API resource to delete</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Code</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
         </member>
         <member name="M:Octokit.IApiConnection.Delete(System.Uri,System.Object)">
@@ -7404,6 +7722,19 @@
             <returns>The created API resource.</returns>
             <exception cref="T:Octokit.ApiException">Thrown when an API error occurs.</exception>
         </member>
+        <member name="M:Octokit.ApiConnection.Post``1(System.Uri,System.Object,System.String,System.String,System.String)">
+            <summary>
+            Creates a new API resource in the list at the specified URI.
+            </summary>
+            <typeparam name="T">The API resource's type.</typeparam>
+            <param name="uri">URI of the API resource to get</param>
+            <param name="data">Object that describes the new API resource; this will be serialized and used as the request's body</param>
+            <param name="accepts">Accept header to use for the API request</param>
+            <param name="contentType">Content type of the API request</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Authentication Code</param>
+            <returns>The created API resource.</returns>
+            <exception cref="T:Octokit.ApiException">Thrown when an API error occurs.</exception>
+        </member>
         <member name="M:Octokit.ApiConnection.Put(System.Uri)">
             <summary>
             Creates or replaces the API resource at the specified URI
@@ -7477,6 +7808,14 @@
             Deletes the API object at the specified URI.
             </summary>
             <param name="uri">URI of the API resource to delete</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
+        </member>
+        <member name="M:Octokit.ApiConnection.Delete(System.Uri,System.String)">
+            <summary>
+            Deletes the API object at the specified URI.
+            </summary>
+            <param name="uri">URI of the API resource to delete</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Code</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> for the request's execution.</returns>
         </member>
         <member name="M:Octokit.ApiConnection.Delete(System.Uri,System.Object)">
@@ -8036,6 +8375,19 @@
             <param name="contentType">Specifies the media type of the request body</param>
             <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
         </member>
+        <member name="M:Octokit.IConnection.Post``1(System.Uri,System.Object,System.String,System.String,System.String)">
+            <summary>
+            Performs an asynchronous HTTP POST request.
+            Attempts to map the response body to an object of type <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">The type to map the response to</typeparam>
+            <param name="uri">URI endpoint to send request to</param>
+            <param name="body">The object to serialize as the body of the request</param>
+            <param name="accepts">Specifies accepted response media types.</param>
+            <param name="contentType">Specifies the media type of the request body</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Authentication Code</param>
+            <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
+        </member>
         <member name="M:Octokit.IConnection.Post``1(System.Uri,System.Object,System.String,System.String,System.TimeSpan)">
             <summary>
             Performs an asynchronous HTTP POST request.
@@ -8111,6 +8463,14 @@
             Performs an asynchronous HTTP DELETE request that expects an empty response.
             </summary>
             <param name="uri">URI endpoint to send request to</param>
+            <returns>The returned <seealso cref="T:System.Net.HttpStatusCode"/></returns>
+        </member>
+        <member name="M:Octokit.IConnection.Delete(System.Uri,System.String)">
+            <summary>
+            Performs an asynchronous HTTP DELETE request that expects an empty response.
+            </summary>
+            <param name="uri">URI endpoint to send request to</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Code</param>
             <returns>The returned <seealso cref="T:System.Net.HttpStatusCode"/></returns>
         </member>
         <member name="M:Octokit.IConnection.Delete(System.Uri,System.Object)">
@@ -8221,6 +8581,19 @@
             <param name="parameters">Querystring parameters for the request</param>
             <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
         </member>
+        <member name="M:Octokit.Connection.Post``1(System.Uri,System.Object,System.String,System.String,System.String)">
+            <summary>
+            Performs an asynchronous HTTP POST request.
+            Attempts to map the response body to an object of type <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">The type to map the response to</typeparam>
+            <param name="uri">URI endpoint to send request to</param>
+            <param name="body">The object to serialize as the body of the request</param>
+            <param name="accepts">Specifies accepted response media types.</param>
+            <param name="contentType">Specifies the media type of the request body</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Authentication Code</param>
+            <returns><seealso cref="T:Octokit.IResponse"/> representing the received HTTP response</returns>
+        </member>
         <member name="M:Octokit.Connection.Patch(System.Uri)">
             <summary>
             Performs an asynchronous HTTP PATCH request.
@@ -8240,6 +8613,14 @@
             Performs an asynchronous HTTP DELETE request that expects an empty response.
             </summary>
             <param name="uri">URI endpoint to send request to</param>
+            <returns>The returned <seealso cref="T:System.Net.HttpStatusCode"/></returns>
+        </member>
+        <member name="M:Octokit.Connection.Delete(System.Uri,System.String)">
+            <summary>
+            Performs an asynchronous HTTP DELETE request that expects an empty response.
+            </summary>
+            <param name="uri">URI endpoint to send request to</param>
+            <param name="twoFactorAuthenticationCode">Two Factor Code</param>
             <returns>The returned <seealso cref="T:System.Net.HttpStatusCode"/></returns>
         </member>
         <member name="M:Octokit.Connection.Delete(System.Uri,System.Object)">
@@ -8720,6 +9101,12 @@
             Describes a new repository to create via the <see cref="M:Octokit.IRepositoriesClient.Create(Octokit.NewRepository)"/> method.
             </summary>
         </member>
+        <member name="M:Octokit.NewRepository.#ctor(System.String)">
+            <summary>
+            Creates an object that describes the repository to create on GitHub.
+            </summary>
+            <param name="name">The name of the repository. This is the only required parameter.</param>
+        </member>
         <member name="P:Octokit.NewRepository.AutoInit">
             <summary>
             Optional. Gets or sets whether to create an initial commit with empty README. The default is false.
@@ -8754,6 +9141,16 @@
             <summary>
             Optional. Gets or sets the desired language's or platform's .gitignore template to apply. Use the name of the template without the extension; "Haskell", for example. Ignored if <see cref="P:Octokit.NewRepository.AutoInit"/> is null or false.
             </summary>
+        </member>
+        <member name="P:Octokit.NewRepository.LicenseTemplate">
+            <summary>
+            Optional. Gets or sets the desired Desired LICENSE template to apply. Use the name of the template without
+            the extension. For example, “mit” or “mozilla”.
+            </summary>
+            <remarks>
+            The list of license templates are here: https://github.com/github/choosealicense.com/tree/gh-pages/_licenses
+            Just omit the ".txt" file extension for the template name.
+            </remarks>
         </member>
         <member name="P:Octokit.NewRepository.Name">
             <summary>
@@ -8856,6 +9253,36 @@
         <member name="P:Octokit.PullRequestRequest.Base">
             <summary>
             Filter pulls by base branch name.
+            </summary>
+        </member>
+        <member name="P:Octokit.PullRequestRequest.SortProperty">
+            <summary>
+            What property to sort pull requests by.
+            </summary>
+        </member>
+        <member name="P:Octokit.PullRequestRequest.SortDirection">
+            <summary>
+            What direction to sort the pull requests.
+            </summary>
+        </member>
+        <member name="F:Octokit.PullRequestSort.Created">
+            <summary>
+            Sort by created date (default)
+            </summary>
+        </member>
+        <member name="F:Octokit.PullRequestSort.Updated">
+            <summary>
+            Sort by last updated date
+            </summary>
+        </member>
+        <member name="F:Octokit.PullRequestSort.Popularity">
+            <summary>
+            Sort by popularity (comment count)
+            </summary>
+        </member>
+        <member name="F:Octokit.PullRequestSort.LongRunning">
+            <summary>
+            Sort by age (filtering by pulls updated in the last month)
             </summary>
         </member>
         <member name="P:Octokit.PullRequestUpdate.Title">
@@ -9144,6 +9571,11 @@
         <member name="P:Octokit.Activity.Id">
             <summary>
             The activity event Id.
+            </summary>
+        </member>
+        <member name="P:Octokit.Activity.Payload">
+            <summary>
+            The payload associated with the activity event.
             </summary>
         </member>
         <member name="T:Octokit.ApiError">
@@ -9849,6 +10281,11 @@
         <member name="F:Octokit.EventInfoState.HeadRefRestored">
             <summary>
             The pull request’s branch was restored.
+            </summary>
+        </member>
+        <member name="F:Octokit.EventInfoState.Unsubscribed">
+            <summary>
+            The actor unsubscribed from notifications for an issue.
             </summary>
         </member>
         <member name="P:Octokit.Issue.Url">
@@ -11512,7 +11949,7 @@
             <param name="commentId">The id of the comment</param>
             <returns>Task{GistComment}.</returns>
         </member>
-        <member name="M:Octokit.IGistCommentsClient.GetForGist(System.String)">
+        <member name="M:Octokit.IGistCommentsClient.GetAllForGist(System.String)">
             <summary>
             Gets all comments for the gist with the specified id.
             </summary>
@@ -11563,7 +12000,7 @@
             <param name="commentId">The id of the comment</param>
             <returns>Task{GistComment}.</returns>
         </member>
-        <member name="M:Octokit.GistCommentsClient.GetForGist(System.String)">
+        <member name="M:Octokit.GistCommentsClient.GetAllForGist(System.String)">
             <summary>
             Gets all comments for the gist with the specified id.
             </summary>
@@ -12238,7 +12675,7 @@
             <param name="number">The comment id</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IRepositoryCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IRepositoryCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets Commit Comments for a repository.
             </summary>
@@ -12247,7 +12684,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.IRepositoryCommentsClient.GetForCommit(System.String,System.String,System.String)">
+        <member name="M:Octokit.IRepositoryCommentsClient.GetAllForCommit(System.String,System.String,System.String)">
             <summary>
             Gets Commit Comments for a specified Commit.
             </summary>
@@ -12313,7 +12750,7 @@
             <param name="number">The comment id</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.RepositoryCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.RepositoryCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets Commit Comments for a repository.
             </summary>
@@ -12322,7 +12759,7 @@
             <param name="name">The name of the repository</param>
             <returns></returns>
         </member>
-        <member name="M:Octokit.RepositoryCommentsClient.GetForCommit(System.String,System.String,System.String)">
+        <member name="M:Octokit.RepositoryCommentsClient.GetAllForCommit(System.String,System.String,System.String)">
             <summary>
             Gets Commit Comments for a specified Commit.
             </summary>
@@ -12716,7 +13153,7 @@
             <param name="number">The pull request number</param>
             <returns>The list of <see cref="T:Octokit.PullRequestReviewComment"/>s for the specified pull request</returns>
         </member>
-        <member name="M:Octokit.IPullRequestReviewCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.IPullRequestReviewCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets a list of the pull request review comments in a specified repository.
             </summary>
@@ -12725,7 +13162,7 @@
             <param name="name">The name of the repository</param>
             <returns>The list of <see cref="T:Octokit.PullRequestReviewComment"/>s for the specified repository</returns>
         </member>
-        <member name="M:Octokit.IPullRequestReviewCommentsClient.GetForRepository(System.String,System.String,Octokit.PullRequestReviewCommentRequest)">
+        <member name="M:Octokit.IPullRequestReviewCommentsClient.GetAllForRepository(System.String,System.String,Octokit.PullRequestReviewCommentRequest)">
             <summary>
             Gets a list of the pull request review comments in a specified repository.
             </summary>
@@ -12806,7 +13243,7 @@
             <param name="number">The pull request number</param>
             <returns>The list of <see cref="T:Octokit.PullRequestReviewComment"/>s for the specified pull request</returns>
         </member>
-        <member name="M:Octokit.PullRequestReviewCommentsClient.GetForRepository(System.String,System.String)">
+        <member name="M:Octokit.PullRequestReviewCommentsClient.GetAllForRepository(System.String,System.String)">
             <summary>
             Gets a list of the pull request review comments in a specified repository.
             </summary>
@@ -12815,7 +13252,7 @@
             <param name="name">The name of the repository</param>
             <returns>The list of <see cref="T:Octokit.PullRequestReviewComment"/>s for the specified repository</returns>
         </member>
-        <member name="M:Octokit.PullRequestReviewCommentsClient.GetForRepository(System.String,System.String,Octokit.PullRequestReviewCommentRequest)">
+        <member name="M:Octokit.PullRequestReviewCommentsClient.GetAllForRepository(System.String,System.String,Octokit.PullRequestReviewCommentRequest)">
             <summary>
             Gets a list of the pull request review comments in a specified repository.
             </summary>
@@ -13619,6 +14056,91 @@
             <remarks>
             Only visible for the current user, or with the correct OAuth scope
             </remarks>
+        </member>
+        <member name="P:Octokit.LicenseMetadata.Key">
+            <summary>
+            The 
+            </summary>
+        </member>
+        <member name="P:Octokit.LicenseMetadata.Name">
+            <summary>
+            Friendly name of the license.
+            </summary>
+        </member>
+        <member name="P:Octokit.LicenseMetadata.Url">
+            <summary>
+            URL to retrieve details about a license.
+            </summary>
+        </member>
+        <member name="P:Octokit.License.HtmlUrl">
+            <summary>
+            Url to the license on https://choosealicense.com
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Featured">
+            <summary>
+            Whether the license is one of the licenses featured on https://choosealicense.com
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Description">
+            <summary>
+            A description of the license.
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Category">
+            <summary>
+            A group or family that the license belongs to such as the GPL family of licenses.
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Implementation">
+            <summary>
+            Notes on how to properly apply the license.
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Required">
+            <summary>
+            Set of codes for what is required under the terms of the license. For example, "include-copyright"
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Permitted">
+            <summary>
+            Set of codes for what is permitted under the terms of the license. For example, "commerical-use"
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Forbidden">
+            <summary>
+            Set of codes for what is forbidden under the terms of the license. For example, "no-liability"
+            </summary>
+        </member>
+        <member name="P:Octokit.License.Body">
+            <summary>
+            The text of the license
+            </summary>
+        </member>
+        <member name="T:Octokit.TwoFactorType">
+            <summary>
+            Methods for receiving 2FA authentication codes
+            </summary>
+        </member>
+        <member name="F:Octokit.TwoFactorType.None">
+            <summary>
+            No method configured
+            </summary>
+        </member>
+        <member name="F:Octokit.TwoFactorType.Unknown">
+            <summary>
+            Unknown method
+            </summary>
+        </member>
+        <member name="F:Octokit.TwoFactorType.Sms">
+            <summary>
+            Receive via SMS
+            </summary>
+        </member>
+        <member name="F:Octokit.TwoFactorType.AuthenticatorApp">
+            <summary>
+            Receive via application
+            </summary>
         </member>
     </members>
 </doc>

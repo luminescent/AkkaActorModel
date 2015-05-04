@@ -1,6 +1,7 @@
 source https://nuget.org/api/v2
 
 nuget FSharp.Formatting
+nuget Microsoft.Bcl.Immutable 1.0.34 framework: >= net45
 nuget NUnit 
 nuget NUnit.Runners
 nuget Nuget.CommandLine

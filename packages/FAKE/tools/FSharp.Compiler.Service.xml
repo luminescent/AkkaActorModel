@@ -9495,82 +9495,82 @@ Build a new array that contains the elements of the first array followed by the 
  Position information stored for lexing tokens
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.tagOfErrorTerminal">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.tagOfErrorTerminal">
 <summary>
  The tag of the error terminal
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.numTerminals">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.numTerminals">
 <summary>
  The total number of terminals 
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.parseError">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.parseError">
 <summary>
  This function is used to hold the user specified &quot;parse_error&quot; or &quot;parse_error_rich&quot; functions
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.productionToNonTerminalTable">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.productionToNonTerminalTable">
 <summary>
  This table is logically part of the Goto table
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.stateToProdIdxsTableRowOffsets">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.stateToProdIdxsTableRowOffsets">
 <summary>
  The sparse table offsets for the productions active for each state
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.stateToProdIdxsTableElements">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.stateToProdIdxsTableElements">
 <summary>
  The sparse table for the productions active for each state
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.sparseGotoTableRowOffsets">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.sparseGotoTableRowOffsets">
 <summary>
  The sparse goto table row offsets
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.gotos">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.gotos">
 <summary>
  The sparse goto table
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.immediateActions">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.immediateActions">
 <summary>
  The immediate action table
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.reductionSymbolCounts">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.reductionSymbolCounts">
 <summary>
  The number of symbols for each reduction
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.actionTableRowOffsets">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.actionTableRowOffsets">
 <summary>
  The sparse action table row offsets
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.actionTableElements">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.actionTableElements">
 <summary>
  The sparse action table elements
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.dataOfToken">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.dataOfToken">
 <summary>
  A function to compute the data carried by a token
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.tagOfToken">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.tagOfToken">
 <summary>
  A function to compute the tag of a token
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.endOfInputTag">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.endOfInputTag">
 <summary>
  The token number indicating the end of input
 </summary>
 </member>
-<member name="F:Internal.Utilities.Text.Parsing.Internal.Utilities.Text.Parsing.Tables`1.reductions">
+<member name="P:Internal.Utilities.Text.Parsing.Tables`1.reductions">
 <summary>
  The reduction table
 </summary>
@@ -9991,7 +9991,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudWhere">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudWhere">
 <summary>
  Debug info for generated code for classunions 
 </summary>
@@ -10008,17 +10008,17 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHasHelpers">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHasHelpers">
 <summary>
  Generate the helpers? 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHelpersAccess">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudHelpersAccess">
 <summary>
  Are the representation helpers public? 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudReprAccess">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Extensions.ILX.Types.IlxUnionInfo.cudReprAccess">
 <summary>
  Is the representation public? 
 </summary>
@@ -10711,7 +10711,7 @@ Build a new array that contains the elements of the first array followed by the 
  Different profiles may omit some types or contain them in different assemblies
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef.NativeResources">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILModuleDef.NativeResources">
 <summary>
  e.g. win86 resources, as the exact contents of a .res or .obj file 
 </summary>
@@ -10788,12 +10788,12 @@ Build a new array that contains the elements of the first array followed by the 
  several auxiliary modules. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.EntrypointElsewhere">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.EntrypointElsewhere">
 <summary>
  Records whether the entrypoint resides in another module. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.ExportedTypes">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.ExportedTypes">
 <summary>
  Records the types impemented by this asssembly in auxiliary 
  modules. 
@@ -10820,7 +10820,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.PublicKey">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.PublicKey">
 <summary>
  This is the public key used to sign this 
  assembly (the signature itself is stored elsewhere: see the 
@@ -10832,7 +10832,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.AuxModuleHashAlgorithm">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILAssemblyManifest.AuxModuleHashAlgorithm">
 <summary>
  This is ID of the algorithm used for the hashes of auxiliary 
  files in the assembly.   These hashes are stored in the 
@@ -10934,7 +10934,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILExportedTypeOrForwarder.Name">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILExportedTypeOrForwarder.Name">
 <summary>
  [Namespace.]Name
 </summary>
@@ -11012,7 +11012,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.HasSecurity">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.HasSecurity">
 <summary>
  Note: some classes are marked &quot;HasSecurity&quot; even if there are no permissions attached, e.g. if they use SuppressUnmanagedCodeSecurityAttribute 
 </summary>
@@ -11041,7 +11041,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.IsComInterop">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILTypeDef.IsComInterop">
 <summary>
  Class or interface generated for COM interop 
 </summary>
@@ -11344,7 +11344,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDef.Offset">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILFieldDef.Offset">
 <summary>
  The explicit offset in bytes when explicit layout is used.
 </summary>
@@ -11395,7 +11395,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsMustRun">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsMustRun">
 <summary>
  .NET 2.0 feature: SafeHandle finalizer must be run 
 </summary>
@@ -11406,7 +11406,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsUnmanagedExport">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.IsUnmanagedExport">
 <summary>
  The method is exported to unmanaged code using COM interop.
 </summary>
@@ -11423,7 +11423,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.HasSecurity">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodDef.HasSecurity">
 <summary>
  Note: some methods are marked &quot;HasSecurity&quot; even if there are no permissions attached, e.g. if they use SuppressUnmanagedCodeSecurityAttribute 
 </summary>
@@ -11544,12 +11544,12 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasDefaultConstructorConstraint">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasDefaultConstructorConstraint">
 <summary>
  Indicates the type argument must have a public nullary constructor 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasNotNullableValueTypeConstraint">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasNotNullableValueTypeConstraint">
 <summary>
  Indicates the type argument must be a value type, but not Nullable 
 </summary>
@@ -11557,17 +11557,17 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasReferenceTypeConstraint">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.HasReferenceTypeConstraint">
 <summary>
  Indicates the type argument must be a reference type 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Variance">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Variance">
 <summary>
  Variance of type parameters, only applicable to generic parameters for generic interfaces and delegates 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Constraints">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILGenericParameterDef.Constraints">
 <summary>
  At most one is the parent type, the others are interface types 
 </summary>
@@ -11853,7 +11853,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILParameter.Marshal">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILParameter.Marshal">
 <summary>
  Marshalling map for parameters. COM Interop only. 
 </summary>
@@ -11990,7 +11990,7 @@ Build a new array that contains the elements of the first array followed by the 
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodBody.MaxStack">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.IL.ILMethodBody.MaxStack">
 <summary>
  strictly speakin should be a uint16 
 </summary>
@@ -17623,18 +17623,18 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.findOriginalException">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.findOriginalException">
 <summary>
  A helper to ensure we rethrow the &quot;original&quot; exception
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.funcOrException">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.funcOrException">
 <summary>
  This field holds either the function to run or a LazyWithContextFailure object recording the exception raised 
  from running the function. It is null if the thunk has been evaluated successfully.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.value">
+<member name="P:Microsoft.FSharp.Compiler.AbstractIL.Internal.Library.LazyWithContext`2.value">
 <summary>
  This field holds the result of a successful computation. It&apos;s initial value is Unchecked.defaultof
 </summary>
@@ -19700,12 +19700,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ast.SynAttribute.AppliesToGetterAndSetter">
+<member name="P:Microsoft.FSharp.Compiler.Ast.SynAttribute.AppliesToGetterAndSetter">
 <summary>
  Is this attribute being applied to a property getter or setter?
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ast.SynAttribute.Target">
+<member name="P:Microsoft.FSharp.Compiler.Ast.SynAttribute.Target">
 <summary>
  Target specifier, e.g. &quot;assembly&quot;,&quot;module&quot;,etc.
 </summary>
@@ -21443,37 +21443,37 @@ Emit comparison instructions
  Generate the hash/compare functions we add to user-defined types by default.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.RootWarnings">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.RootWarnings">
 <summary>
  *Parse* warnings seen while parsing root of closure
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.RootErrors">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.RootErrors">
 <summary>
  *Parse* errors seen while parsing root of closure
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.NoWarns">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.NoWarns">
 <summary>
  The #nowarns
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.Inputs">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.Inputs">
 <summary>
  The list of all sources in the closure with inputs when available
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.UnresolvedReferences">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.UnresolvedReferences">
 <summary>
  The list of references that were not resolved during load closure. These may still be extension references.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.References">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.References">
 <summary>
  The resolved references along with the ranges of the #r positions in each file.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.LoadClosure.SourceFiles">
+<member name="P:Microsoft.FSharp.Compiler.Build.LoadClosure.SourceFiles">
 <summary>
  The source files along with the ranges of the #load positions in each file.
 </summary>
@@ -22060,7 +22060,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.isInteractive">
+<member name="P:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.isInteractive">
 <summary>
  If true, indicates all type checking and code generation is in the context of fsi.exe
 </summary>
@@ -22329,7 +22329,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.loadedSources">
+<member name="P:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.loadedSources">
 <summary>
  Sources added into the build with #load
 </summary>
@@ -22337,7 +22337,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.light">
+<member name="P:Microsoft.FSharp.Compiler.Build.TcConfigBuilder.light">
 <summary>
  Set if the user has explicitly turned indentation-aware syntax on/off
 </summary>
@@ -22489,32 +22489,32 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.sysdir">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.sysdir">
 <summary>
  Whether or not this is an installed system assembly (for example, System.dll)
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.redist">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.redist">
 <summary>
  Name of the redist, if any, that the assembly was found in.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.fusionName">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.fusionName">
 <summary>
  The qualified name of the assembly
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.resolvedFrom">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.resolvedFrom">
 <summary>
  Search path used to find this spot.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.resolvedPath">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.resolvedPath">
 <summary>
  Path to the resolvedFile
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Build.AssemblyResolution.originalReference">
+<member name="P:Microsoft.FSharp.Compiler.Build.AssemblyResolution.originalReference">
 <summary>
  The original reference to the assembly.
 </summary>
@@ -23394,32 +23394,32 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.IterationIsAtTopLevel">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.IterationIsAtTopLevel">
 <summary>
  top of expr toplevel? (true) 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.TopLevelBindings">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.TopLevelBindings">
 <summary>
  val not defined under lambdas 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.RecursiveBindings">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.RecursiveBindings">
 <summary>
  v -&gt; recursive? * v list   -- the others in the mutual binding 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.DecisionTreeBindings">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.DecisionTreeBindings">
 <summary>
  bound in a decision tree? 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.Defns">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.Defns">
 <summary>
  v -&gt; binding repr 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.Uses">
+<member name="P:Microsoft.FSharp.Compiler.Detuple.GlobalUsageAnalysis.Results.Uses">
 <summary>
  v -&gt; context / APP inst args 
 </summary>
@@ -23521,7 +23521,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Env.TcGlobals.memoize_file">
+<member name="P:Microsoft.FSharp.Compiler.Env.TcGlobals.memoize_file">
 <summary>
  Memoization table to help minimize the number of ILSourceDocument objects we create
 </summary>
@@ -25425,7 +25425,7 @@ Emit comparison instructions
 <member name="T:Microsoft.FSharp.Compiler.ErrorLogger">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ProvidedAssemblyStaticLinkingMap.ILTypeMap">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ProvidedAssemblyStaticLinkingMap.ILTypeMap">
 <summary>
  The table of remappings from type names in the provided assembly to type
  names in the statically linked, embedded assembly.
@@ -25867,27 +25867,27 @@ Emit comparison instructions
  pleasant, but better than intertwining the whole &quot;ProvidedType&quot; with the TAST structure.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.temporaryFolder">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.temporaryFolder">
 <summary>
  The folder for temporary files
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.referencedAssemblies">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.referencedAssemblies">
 <summary>
  All referenced assemblies, including the type provider itself, and possibly other type providers.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.showResolutionMessages">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.showResolutionMessages">
 <summary>
  Whether or not the --showextensionresolution flag was supplied to the compiler.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.outputFile">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.outputFile">
 <summary>
  Output file name
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.resolutionFolder">
+<member name="P:Microsoft.FSharp.Compiler.ExtensionTyping.ResolutionEnvironment.resolutionFolder">
 <summary>
  The folder from which an extension provider is resolving from. This is typically the project folder.
 </summary>
@@ -26394,22 +26394,22 @@ Emit comparison instructions
  Used to support the compilation-inversion operations &quot;ClearGeneratedValue&quot; and &quot;LookupGeneratedValue&quot;
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.quotationResourceBytes">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.quotationResourceBytes">
 <summary>
  The generated IL/ILX resources associated with F# quotations
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilNetModuleAttrs">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilNetModuleAttrs">
 <summary>
  The generated IL/ILX .NET module attributes
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilAssemAttrs">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilAssemAttrs">
 <summary>
  The generated IL/ILX assembly attributes
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilTypeDefs">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenResults.ilTypeDefs">
 <summary>
  The generated IL/ILX type definitions
 </summary>
@@ -26419,7 +26419,7 @@ Emit comparison instructions
  The results of the ILX compilation of one fragment of an assembly
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.alwaysCallVirt">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.alwaysCallVirt">
 <summary>
  Indicates that, whenever possible, use callvirt instead of call
 </summary>
@@ -26430,7 +26430,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.isInteractive">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.isInteractive">
 <summary>
  Indicates the code is being generated in FSI.EXE and is executed immediately after code generation
  This includes all interactively compiled code, including #load, definitions, and expressions
@@ -26448,7 +26448,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.mainMethodInfo">
+<member name="P:Microsoft.FSharp.Compiler.Ilxgen.IlxGenOptions.mainMethodInfo">
 <summary>
  If this is set, then the last module becomes the &quot;main&quot; module 
 </summary>
@@ -30650,22 +30650,22 @@ Emit comparison instructions
 <member name="T:Microsoft.FSharp.Compiler.Lib">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.stateVars">
+<member name="P:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.stateVars">
 <summary>
  The state variables allocated for one portion of the sequence expression (i.e. the local let-bound variables which become state variables)
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.significantClose">
+<member name="P:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.significantClose">
 <summary>
  any actual work done in Close
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.labels">
+<member name="P:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.labels">
 <summary>
  The labels allocated for one portion of the sequence expression
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.phase2">
+<member name="P:Microsoft.FSharp.Compiler.Lowertop.LoweredSeqFirstPhaseResult.phase2">
 <summary>
  The code to run in the second phase, to rebuild the expressions, once all code labels and their mapping to program counters have been determined
  &apos;nextVar&apos; is the argument variable for the GenerateNext method that represents the byref argument that holds the &quot;goto&quot; destination for a tailcalling sequence expression
@@ -34643,12 +34643,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Pickle.PickledDataWithReferences`1.FixupThunks">
+<member name="P:Microsoft.FSharp.Compiler.Pickle.PickledDataWithReferences`1.FixupThunks">
 <summary>
  The assumptions that need to be fixed up
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Pickle.PickledDataWithReferences`1.RawData">
+<member name="P:Microsoft.FSharp.Compiler.Pickle.PickledDataWithReferences`1.RawData">
 <summary>
  The data that uses a collection of CcuThunks internally
 </summary>
@@ -35831,6 +35831,11 @@ Emit comparison instructions
  Indicate this is a total active pattern
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup.EnclosingEntity">
+<summary>
+ Try to get the enclosing entity of the active pattern
+</summary>
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpActivePatternGroup">
 <summary>
  Represents all cases within an active pattern
@@ -36806,6 +36811,11 @@ Emit comparison instructions
  The range of the expression
 </summary>
 </member>
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr.ImmediateSubExpressions">
+<summary>
+ The immediate sub-expressions of the expression.  
+</summary>
+</member>
 <member name="T:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpExpr">
 <summary>
  Represents a checked and reduced expression, as seen by the F# language.  The active patterns 
@@ -37772,42 +37782,42 @@ Emit comparison instructions
  Represents the checking context implied by the ProjectOptions 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UnresolvedReferences">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UnresolvedReferences">
 <summary>
  Unused in this API and should be &apos;None&apos;
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.LoadTime">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.LoadTime">
 <summary>
  Timestamp of project/script load, used to differentiate between different instances of a project load.
  This ensures that a complete reload of the project or script type checking
  context occurs on project or script unload/reload.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UseScriptResolutionRules">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.UseScriptResolutionRules">
 <summary>
  When true, use the reference resolution rules for scripts rather than the rules for compiler.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.IsIncompleteTypeCheckEnvironment">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.IsIncompleteTypeCheckEnvironment">
 <summary>
  When true, the typechecking environment is known a priori to be incomplete, for
  example when a .fs file is opened outside of a project. In this case, the number of error 
  messages reported is reduced.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ReferencedProjects">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ReferencedProjects">
 <summary>
  The command line arguments for the other projects referenced by this project, indexed by the
  exact text used in the &quot;-r:&quot; reference in FSharpProjectOptions.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.OtherOptions">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.OtherOptions">
 <summary>
  Additional command line argument options for the project. These can include additional files and references.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ProjectFileNames">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpProjectOptions.ProjectFileNames">
 <summary>
  The files in the project
 </summary>
@@ -38084,27 +38094,27 @@ Emit comparison instructions
  Gives an indicattion of the color class to assign to the token an IDE
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FullMatchedLength">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FullMatchedLength">
 <summary>
  The full length consumed by this match, including delayed tokens (which can be ignored in naive lexers)
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.TokenName">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.TokenName">
 <summary>
  Provides additional information about the token
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.Tag">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.Tag">
 <summary>
  The tag is an integer identifier for the token
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FSharpTokenTriggerClass">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.FSharpTokenTriggerClass">
 <summary>
  Actions taken when the token is typed
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.CharClass">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.CharClass">
 <summary>
  Gives an indication of the class to assign to the token an IDE
 </summary>
@@ -38112,12 +38122,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.RightColumn">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.RightColumn">
 <summary>
  Right column of the token.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.SourceCodeServices.Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.LeftColumn">
+<member name="P:Microsoft.FSharp.Compiler.SourceCodeServices.FSharpTokenInfo.LeftColumn">
 <summary>
  Left column of the token.
 </summary>
@@ -39449,42 +39459,42 @@ Emit comparison instructions
  non-generic types.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeTyvars">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeTyvars">
 <summary>
  See FreeTyvars above.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeUnionCases">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeUnionCases">
 <summary>
  The summary of union constructors used in the expression. These may be
  marked &apos;internal&apos; or &apos;private&apos; and we have to check various conditions associated with that.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeRecdFields">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeRecdFields">
 <summary>
  The summary of fields used in the expression. These may be made private by a signature 
  or marked &apos;internal&apos; or &apos;private&apos; and we have to check various conditions associated with that. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeLocalTyconReprs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeLocalTyconReprs">
 <summary>
  The summary of locally defined tycon representations used in the expression. These may be made private by a signature 
  or marked &apos;internal&apos; or &apos;private&apos; and we have to check various conditions associated with that. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.UsesUnboundRethrow">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.UsesUnboundRethrow">
 <summary>
  Indicates if the expression contains a call to rethrow that is not bound under a (try-)with branch. 
  Rethrow may only occur in such locations. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.UsesMethodLocalConstructs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.UsesMethodLocalConstructs">
 <summary>
  Indicates if the expression contains a call to a protected member or a base call. 
  Calls to protected members and direct calls to super classes can&apos;t escape, also code can&apos;t be inlined 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeLocals">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeVars.FreeLocals">
 <summary>
  The summary of locally defined variables used in the expression. These may be hidden at let bindings etc. 
  or made private by a signature or marked &apos;internal&apos; or &apos;private&apos;, and we have to check various conditions associated with that. 
@@ -39500,18 +39510,18 @@ Emit comparison instructions
  Represents an amortized computation of the free variables in an expression
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTypars">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTypars">
 <summary>
  The summary of type parameters used in the expression. These may not escape the enclosing generic construct 
  and we have to check various conditions associated with that. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTraitSolutions">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTraitSolutions">
 <summary>
  The summary of values used as trait solutions
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTycons">
+<member name="P:Microsoft.FSharp.Compiler.Tast.FreeTyvars.FreeTycons">
 <summary>
  The summary of locally defined type definitions used in the expression. These may be made private by a signature 
  and we have to check various conditions associated with that. 
@@ -40412,7 +40422,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuThunk.orphanfixup">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuThunk.orphanfixup">
 <summary>
  ccu.orphanfixup is true when a reference is missing in the transitive closure of static references that
  may potentially be required for the metadata of referenced DLLs. It is set to true if the &quot;loader&quot;
@@ -40570,69 +40580,69 @@ Emit comparison instructions
  Represents a table of .NET CLI type forwarders for an assembly
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.TypeForwarders">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.TypeForwarders">
 <summary>
  The table of .NET CLI type forwarders for this assembly
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.MemberSignatureEquality">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.MemberSignatureEquality">
 <summary>
  A helper function used to link method signatures using type equality. This is effectively a forward call to the type equality 
  logic in tastops.fs
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.Contents">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.Contents">
 <summary>
  A handle to the full specification of the contents of the module contained in this ccu
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.UsesQuotations">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.UsesQuotations">
 <summary>
  Indicates that this DLL uses quotation literals somewhere. This is used to implement a restriction on static linking
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.ImportProvidedType">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.ImportProvidedType">
 <summary>
  A helper function used to link method signatures using type equality. This is effectively a forward call to the type equality 
  logic in tastops.fs
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.InvalidateEvent">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.InvalidateEvent">
 <summary>
  Triggered when the contents of the CCU are invalidated
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.IsProviderGenerated">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.IsProviderGenerated">
 <summary>
  Is the CCu an assembly inected by a type provider
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.IsFSharp">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.IsFSharp">
 <summary>
  Indicates that this DLL was compiled using the F# compiler and has F# metadata
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.SourceCodeDirectory">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.SourceCodeDirectory">
 <summary>
  A hint as to where does the code for the CCU live (e.g what was the tcConfig.implicitIncludeDir at compilation time for this DLL?) 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.QualifiedName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.QualifiedName">
 <summary>
  The fully qualified assembly reference string to refer to this assembly. This is persisted in quotations 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.Stamp">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.Stamp">
 <summary>
  A unique stamp for this DLL 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.ILScopeRef">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.ILScopeRef">
 <summary>
  Holds the data indicating how this assembly/module is referenced from the code being compiled. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.CcuData.FileName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.CcuData.FileName">
 <summary>
  Holds the filename for the DLL, if any 
 </summary>
@@ -40810,12 +40820,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValRef.nlr">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValRef.nlr">
 <summary>
  Indicates a reference to something bound in another CCU 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValRef.binding">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValRef.binding">
 <summary>
  Indicates a reference to something bound in this CCU 
 </summary>
@@ -40998,12 +41008,12 @@ Emit comparison instructions
  note: ModuleOrNamespaceRef and TyconRef are type equivalent 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityRef.nlr">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityRef.nlr">
 <summary>
  Indicates a reference to something bound in another CCU 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityRef.binding">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityRef.binding">
 <summary>
  Indicates a reference to something bound in this CCU 
 </summary>
@@ -41552,12 +41562,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.NonLocalValOrMemberRef.ItemKey">
+<member name="P:Microsoft.FSharp.Compiler.Tast.NonLocalValOrMemberRef.ItemKey">
 <summary>
  The name of the value, or the full signature of the member
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.NonLocalValOrMemberRef.EnclosingEntity">
+<member name="P:Microsoft.FSharp.Compiler.Tast.NonLocalValOrMemberRef.EnclosingEntity">
 <summary>
  A reference to the entity containing the value or member. THis will always be a non-local reference
 </summary>
@@ -41580,17 +41590,17 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.IsImplemented">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.IsImplemented">
 <summary>
  Gets updated with &apos;true&apos; if an abstract slot is implemented in the file being typechecked.  Internal only. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.ImplementedSlotSigs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.ImplementedSlotSigs">
 <summary>
  Updated with the full implemented slotsig after interface implementation relation is checked 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.ApparentParent">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValMemberInfo.ApparentParent">
 <summary>
  The parent type. For an extension member this is the type being extended 
 </summary>
@@ -41598,12 +41608,12 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_xmldocsig">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_xmldocsig">
 <summary>
  XML documentation signature for the value
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_xmldoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_xmldoc">
 <summary>
  XML documentation attached to a value.
 </summary>
@@ -41614,24 +41624,24 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_attribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_attribs">
 <summary>
  Custom attributes attached to the value. These contain references to other values (i.e. constructors in types). Mutable to fixup  
  these value references after copying a colelction of values. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_member_info">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_member_info">
 <summary>
  Is the value actually an instance method/property/event that augments 
  a type, and if so what name does it take in the IL?
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_access">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_access">
 <summary>
  How visible is this? 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_defn">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_defn">
 <summary>
  What is the original, unoptimized, closed-term definition, if any? 
  Used to implement [&lt;ReflectedDefinition&gt;]
@@ -41640,7 +41650,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_flags">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_flags">
 <summary>
  See vflags section further below for encoding/decodings here 
 </summary>
@@ -41651,7 +41661,7 @@ Emit comparison instructions
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValData.val_other_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValData.val_other_range">
 <summary>
  If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
  the signature range for an item in an implementation
@@ -42084,22 +42094,22 @@ Get the signature for the value&apos;s XML documentation
  amongst all those in a ModuleOrNamespace.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.TotalArgCount">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.TotalArgCount">
 <summary>
  Indicates the total argument count of the member.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.LogicalName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.LogicalName">
 <summary>
  Indicates the logical name of the member. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.MemberIsOverride">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.MemberIsOverride">
 <summary>
  Indicates if the member is an override. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.MemberParentMangledName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.ValLinkagePartialKey.MemberParentMangledName">
 <summary>
  The name of the type with which the member is associated. None for non-member values.
 </summary>
@@ -42260,7 +42270,7 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.Typar.AsType">
+<member name="P:Microsoft.FSharp.Compiler.Tast.Typar.AsType">
 <summary>
  A cached TAST type used when this type variable is used as type.
 </summary>
@@ -42421,27 +42431,27 @@ Get the signature for the value&apos;s XML documentation
  A declared generic type/measure parameter, or a type/measure inference variable.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_constraints">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_constraints">
 <summary>
  The inferred constraints for the type inference variable 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_solution">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_solution">
 <summary>
  An inferred equivalence for a type inference variable. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_attribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_attribs">
 <summary>
  The declared attributes of the type parameter. Empty for type inference variables. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_xmldoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_xmldoc">
 <summary>
  The documentation for the type parameter. Empty for type inference variables.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_stamp">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_stamp">
 <summary>
  The unique stamp of the typar blob. 
 </summary>
@@ -42449,12 +42459,12 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_il_name">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_il_name">
 <summary>
  MUTABILITY: we set the names of generalized inference type parameters to make the look nice for IL code generation 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyparData.typar_id">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyparData.typar_id">
 <summary>
  MUTABILITY: we set the names of generalized inference type parameters to make the look nice for IL code generation 
 </summary>
@@ -42682,68 +42692,68 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_other_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_other_range">
 <summary>
  If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
  the signature range for an item in an implementation
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_id">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_id">
 <summary>
  Name/declaration-location of the field 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_fattribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_fattribs">
 <summary>
  Attributes attached to generated field 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_pattribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_pattribs">
 <summary>
  Attributes attached to generated property 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_access">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_access">
 <summary>
   Indicates the declared visibility of the field, not taking signatures into account 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_const">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_const">
 <summary>
  The default initialization info, for static literals 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_secret">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_secret">
 <summary>
  Indicates a compiler generated field, not visible to Intellisense or name resolution 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_volatile">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_volatile">
 <summary>
  Indicates a volatile field 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_static">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_static">
 <summary>
  Indicates a static field 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_type">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_type">
 <summary>
  The type of the field, w.r.t. the generic parameters of the enclosing type constructor 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_xmldocsig">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_xmldocsig">
 <summary>
  XML Documentation signature for the field
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_xmldoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_xmldoc">
 <summary>
  Documentation for the field 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_mutable">
+<member name="P:Microsoft.FSharp.Compiler.Tast.RecdField.rfield_mutable">
 <summary>
  Is the field declared mutable in F#? 
 </summary>
@@ -42808,48 +42818,48 @@ Get the signature for the value&apos;s XML documentation
  It is normally compiled to a property.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.Attribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.Attribs">
 <summary>
  Attributes, attached to the generated static method to make instances of the case 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.Accessibility">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.Accessibility">
 <summary>
   Indicates the declared visibility of the union constructor, not taking signatures into account 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.OtherRangeOpt">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.OtherRangeOpt">
 <summary>
  If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
  the signature range for an item in an implementation
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.Id">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.Id">
 <summary>
  Name/range of the case 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.XmlDocSig">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.XmlDocSig">
 <summary>
  XML documentation signature for the case
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.XmlDoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.XmlDoc">
 <summary>
  Documentation for the case 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.CompiledName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.CompiledName">
 <summary>
  Name of the case in generated IL code 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.ReturnType">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.ReturnType">
 <summary>
  Return type constructed by the case. Normally exactly the type of the enclosing type, sometimes an abbreviation of it 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.UnionCase.FieldTable">
+<member name="P:Microsoft.FSharp.Compiler.Tast.UnionCase.FieldTable">
 <summary>
  Data carried by the case. 
 </summary>
@@ -42881,12 +42891,12 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconUnionData.CompiledRepresentation">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconUnionData.CompiledRepresentation">
 <summary>
  The ILX data structure representing the discriminated union. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconUnionData.CasesTable">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconUnionData.CasesTable">
 <summary>
  The cases contained in the discriminated union. 
 </summary>
@@ -42897,12 +42907,12 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconUnionCases.CasesByName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconUnionCases.CasesByName">
 <summary>
  The cases of the discriminated union, indexed by name. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconUnionCases.CasesByIndex">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconUnionCases.CasesByIndex">
 <summary>
  The cases of the discriminated union, in declaration order. 
 </summary>
@@ -42916,12 +42926,12 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconRecdFields.FieldsByName">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconRecdFields.FieldsByName">
 <summary>
  The fields of the record, indexed by name. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconRecdFields.FieldsByIndex">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconRecdFields.FieldsByIndex">
 <summary>
  The fields of the record, in declaration order. 
 </summary>
@@ -42944,17 +42954,17 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_rfields">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_rfields">
 <summary>
  The fields of the class, struct or enum 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_vslots">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_vslots">
 <summary>
  The declared abstract slots of the class, interface or struct 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_kind">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconObjModelData.fsobjmodel_kind">
 <summary>
  Indicates whether the type declaration is a class, interface, enum, delegate or struct 
 </summary>
@@ -42993,7 +43003,7 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsSuppressRelocate">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsSuppressRelocate">
 <summary>
  Indicates the type is generated, but type-relocation is suppressed
 </summary>
@@ -43001,57 +43011,57 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsDelegate">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsDelegate">
 <summary>
  A flag read from the provided type and used to compute basic properties of the type definition.
  Reading is delayed, since it looks at the .BaseType
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.UnderlyingTypeOfEnum">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.UnderlyingTypeOfEnum">
 <summary>
  A type read from the provided type and used to compute basic properties of the type definition.
  Reading is delayed, since it does an import on the underlying type
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsEnum">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsEnum">
 <summary>
  A flag read eagerly from the provided type and used to compute basic properties of the type definition.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsStructOrEnum">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsStructOrEnum">
 <summary>
  A flag read eagerly from the provided type and used to compute basic properties of the type definition.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsInterface">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsInterface">
 <summary>
  A flag read eagerly from the provided type and used to compute basic properties of the type definition.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsSealed">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsSealed">
 <summary>
  A flag read eagerly from the provided type and used to compute basic properties of the type definition.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsClass">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.IsClass">
 <summary>
  A flag read eagerly from the provided type and used to compute basic properties of the type definition.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.LazyBaseType">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.LazyBaseType">
 <summary>
  The base type of the type. We use it to compute the compiled representation of the type for erased types.
  Reading is delayed, since it does an import on the underlying type
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.ProvidedType">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.ProvidedType">
 <summary>
  The underlying System.Type (wrapped as a ProvidedType to make sure we don&apos;t call random things on
  System.Type, and wrapped as Tainted to make sure we track which provider this came from, for reporting
  error messages)
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.ResolutionEnvironment">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TProvidedTypeInfo.ResolutionEnvironment">
 <summary>
  The parameters given to the provider that provided to this type.
 </summary>
@@ -43128,66 +43138,66 @@ Get the signature for the value&apos;s XML documentation
  The information for the contents of a type. Also used for a provided namespace.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_abstract">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_abstract">
 <summary>
  Set to true if the type is determined to be abstract 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_closed">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_closed">
 <summary>
  Set to true at the end of the scope where proper augmentations are allowed 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_super">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_super">
 <summary>
  Super type, if any 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_interfaces">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_interfaces">
 <summary>
  Interface implementations - boolean indicates compiler-generated 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_adhoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_adhoc">
 <summary>
  Properties, methods etc. as lookup table
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_adhoc_list">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_adhoc_list">
 <summary>
  Properties, methods etc. in declaration order. The boolean flag for each indicates if the
  member is known to be an explicit interface implementation. This must be computed and
  saved prior to remapping assembly information.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_hasObjectGetHashCode">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_hasObjectGetHashCode">
 <summary>
  True if the type defined an Object.GetHashCode method. In this 
  case we give a warning if we auto-generate a hash method since the semantics may not match up
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_hash_and_equals_withc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_hash_and_equals_withc">
 <summary>
  This is the value implementing the auto-generated comparison
  semantics if any. It is not present if the type defines its own implementation
  of IStructuralEquatable or if the type doesn&apos;t implement IComparable implicitly.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_equals">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_equals">
 <summary>
  This is the value implementing the auto-generated equality 
  semantics if any. It is not present if the type defines its own implementation 
  of Object.Equals or if the type doesn&apos;t override Object.Equals implicitly. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_compare_withc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_compare_withc">
 <summary>
  This is the value implementing the auto-generated comparison
  semantics if any. It is not present if the type defines its own implementation
  of IStructuralComparable or if the type doesn&apos;t implement IComparable implicitly.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_compare">
+<member name="P:Microsoft.FSharp.Compiler.Tast.TyconAugmentation.tcaug_compare">
 <summary>
  This is the value implementing the auto-generated comparison 
  semantics if any. It is not present if the type defines its own implementation 
@@ -43224,93 +43234,93 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_il_repr_cache">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_il_repr_cache">
 <summary>
  Used during codegen to hold the ILX representation indicating how to access the type 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_cpath">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_cpath">
 <summary>
  The stable path to the type, e.g. Microsoft.FSharp.Core.FSharpFunc`2 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_accessiblity">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_accessiblity">
 <summary>
  Indicates how visible is the entitiy is.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_pubpath">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_pubpath">
 <summary>
  The stable path to the type, e.g. Microsoft.FSharp.Core.FSharpFunc`2 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_xmldocsig">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_xmldocsig">
 <summary>
  The XML document signature for this entity
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_xmldoc">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_xmldoc">
 <summary>
  The declared documentation for the type or module 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_modul_contents">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_modul_contents">
 <summary>
  This field is used when the &apos;tycon&apos; is really a module definition. It holds statically nested type definitions and nested modules 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_exn_info">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_exn_info">
 <summary>
  Field used when the &apos;tycon&apos; is really an exception definition
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_tcaug">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_tcaug">
 <summary>
  The methods and properties of the type 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_abbrev">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_abbrev">
 <summary>
  If non-None, indicates the type is an abbreviation for another type. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_repr">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_repr">
 <summary>
  The declared representation of the type, i.e. record, union, class etc. 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_attribs">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_attribs">
 <summary>
  The declared attributes for the type 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_repr_accessibility">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_tycon_repr_accessibility">
 <summary>
  The declared accessibility of the representation, not taking signatures into account 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_other_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_other_range">
 <summary>
  If the flag is true, this is the implementation range for an item in a signature, otherwise it is 
  the signature range for an item in an implementation
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_range">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_range">
 <summary>
  The declaration location for the type constructor 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_compiled_name">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_compiled_name">
 <summary>
  The name of the type, possibly with `n mangling 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_logical_name">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_logical_name">
 <summary>
  The name of the type, possibly with `n mangling 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_stamp">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_stamp">
 <summary>
  The unique stamp of the &quot;tycon blob&quot;. Note the same tycon in signature and implementation get different stamps 
 </summary>
@@ -43321,7 +43331,7 @@ Get the signature for the value&apos;s XML documentation
 <member name="">
 
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Tast.EntityData.entity_typars">
+<member name="P:Microsoft.FSharp.Compiler.Tast.EntityData.entity_typars">
 <summary>
  The declared type parameters of the type  
 </summary>
@@ -47820,27 +47830,27 @@ Get the signature for the value&apos;s XML documentation
  and returns a CalledMeth object for further analysis.
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.AssignedNamedArgs">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.AssignedNamedArgs">
 <summary>
  Named args
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.ParamArrayCallerArgs">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.ParamArrayCallerArgs">
 <summary>
  Any unnamed caller arguments assigned to a &quot;param array&quot; argument
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.ParamArrayCalledArgOpt">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.ParamArrayCalledArgOpt">
 <summary>
  The called &quot;ParamArray&quot; argument, if any
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.UnnamedCallerArgs">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.UnnamedCallerArgs">
 <summary>
  Any unnamed caller arguments not otherwise assigned 
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.UnnamedCalledArgs">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.CalledMethArgSet`1.UnnamedCalledArgs">
 <summary>
  The called arguments corresponding to &quot;unnamed&quot; arguments
 </summary>
@@ -47894,17 +47904,17 @@ Get the signature for the value&apos;s XML documentation
  Represents the possibilities for a named-setter argument (a property, field , or a record field setter)
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.CallerArg">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.CallerArg">
 <summary>
  The argument on the caller side
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.CalledArg">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.CalledArg">
 <summary>
  The called argument in the method
 </summary>
 </member>
-<member name="F:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.NamedArgIdOpt">
+<member name="P:Microsoft.FSharp.Compiler.Typrelns.AssignedCalledArg`1.NamedArgIdOpt">
 <summary>
  The identifier for a named argument, if any
 </summary>

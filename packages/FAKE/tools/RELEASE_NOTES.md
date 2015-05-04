@@ -1,3 +1,88 @@
+#### 3.30.3 - 02.05.2015
+* Fix for watching files via relative paths - https://github.com/fsharp/FAKE/pull/782
+
+#### 3.30.2 - 30.04.2015
+* Fix package id parsing and avoid NPE when feed is missing some properties - https://github.com/fsharp/FAKE/pull/776
+
+#### 3.30.1 - 29.04.2015
+* FCS simplification - https://github.com/fsharp/FAKE/pull/773
+* Paket push task runs in parallel - https://github.com/fsharp/FAKE/pull/768
+
+#### 3.29.2 - 27.04.2015
+* New file system change watcher - http://fsharp.github.io/FAKE/watch.html
+* NuGet pack task treats non csproj files as nuspec files - https://github.com/fsharp/FAKE/pull/767
+* New helpers to start and stop DynamicsNAV ServiceTiers
+* Automatically replace Win7ToWin8 import files for Dynamics NAV during Import
+* OpenSourced DynamicsNAV replacement helpers
+* Use Microsoft.AspNet.Razor 2.0.30506 for FAKE.Deploy - https://github.com/fsharp/FAKE/pull/756
+* New build parameter functions
+* Fix http://stackoverflow.com/questions/29572870/f-fake-unable-to-get-fake-to-merge-placeholder-arguments-in-nuspec-file
+* New environment variable helpers
+
+#### 3.28.0 - 09.04.2015
+* Don't run package restore during MSBuild run from FAKE - https://github.com/fsharp/FAKE/pull/753
+* Added support for Mage's CertHash parameter - https://github.com/fsharp/FAKE/pull/750
+* Force build server output in xUnit2 if the user wishes to - https://github.com/fsharp/FAKE/pull/749
+* Reverting 0df4569b3bdeef99edf2eec6013dab784e338b7e due to backwards compat issues
+* Improvements for FAKE.Deploy - https://github.com/fsharp/FAKE/pull/745
+* Set debug flag on mono - https://github.com/fsharp/FAKE/pull/744
+
+#### 3.27.0 - 07.04.2015
+* New Android publisher - http://fsharp.github.io/FAKE/androidpublisher.html
+* New Archive helpers allow to build zip, gzip, bzip2, tar, and tar.gz/tar.bz2 - https://github.com/fsharp/FAKE/pull/727
+* Download Status Parameter for HockeyAppHelper - https://github.com/fsharp/FAKE/pull/741
+* Added more parameters for HockeyApp Upload API - https://github.com/fsharp/FAKE/pull/723
+* `NuGetPack` task allows to set framework references - https://github.com/fsharp/FAKE/pull/721
+* New task `NuGetPackDirectly` works without template files.
+* Find NuGet.exe in current folder (and sub-folders) first, then look in PATH - https://github.com/fsharp/FAKE/pull/718
+* New tutorial about Vagrant - http://fsharp.github.io/FAKE/vagrant.html
+* REVERTING: SystemRoot also works on mono - https://github.com/fsharp/FAKE/pull/706 (see https://github.com/fsharp/FAKE/issues/715)
+* BUGFIX: Use DocumentNamespace for Nuspec files - https://github.com/fsharp/FAKE/pull/736
+* BUGFIX: Display agent success / error messages in UI for FAKE.Deploy - https://github.com/fsharp/FAKE/pull/735
+* BUGFIX: Add build directory for doc generation - https://github.com/fsharp/FAKE/pull/734
+
+#### 3.26.0 - 25.03.2015
+* Detect GitLab CI as build server - https://github.com/fsharp/FAKE/pull/712
+
+#### 3.25.2 - 24.03.2015
+* Look into PATH when scanning for NuGet.exe - https://github.com/fsharp/FAKE/pull/708
+* SystemRoot also works on mono - https://github.com/fsharp/FAKE/pull/706
+* Use EditorConfig - http://editorconfig.org/
+
+#### 3.25.1 - 24.03.2015
+* More AppVeyor properties added - https://github.com/fsharp/FAKE/pull/704
+
+#### 3.25.0 - 23.03.2015
+* Look into PATH when scanning for tools - https://github.com/fsharp/FAKE/pull/703
+
+#### 3.24.0 - 22.03.2015
+* BREAKING CHANGE: Better support for AssemblyMetadata in AssemblyInfoHelper - https://github.com/fsharp/FAKE/pull/694
+* Added modules for building VB6 projects with SxS manifest - https://github.com/fsharp/FAKE/pull/697
+* Use parameter quoting for Paket helpers
+
+#### 3.23.0 - 12.03.2015
+* BREAKING CHANGE: Adjusted Xamarin.iOS archive helper params - https://github.com/fsharp/FAKE/pull/693
+* New operator </> allows to combine paths similar to @@ but with no trimming operations - https://github.com/fsharp/FAKE/pull/695
+
+#### 3.22.0 - 12.03.2015
+* Globbing allows to grab folders without a trailing slash
+* Removed long time obsolete globbing functions
+
+#### 3.21.0 - 11.03.2015
+* FAKE allows to run parallel builds - http://fsharp.github.io/FAKE/parallel-build.html
+
+#### 3.20.1 - 10.03.2015
+* Proper source index - https://github.com/fsharp/FAKE/issues/678
+
+#### 3.20.0 - 10.03.2015
+* Always use FCS in FAKE and FSI in FAke.Deploy
+* Modify VM size on a .csdef for Azure Cloud Services - https://github.com/fsharp/FAKE/pull/687
+* Added ZipHelper.ZipOfIncludes - https://github.com/fsharp/FAKE/pull/686
+* Added AppVeyorEnvironment.RepoTag & .RepoTagName - https://github.com/fsharp/FAKE/pull/685
+* New tutorial about Azure Cloud Service - http://fsharp.github.io/FAKE/azurecloudservices.html
+* Added basic support for creating Azure Cloud Services - http://fsharp.github.io/FAKE/apidocs/fake-azure-cloudservices.html
+* Added metadata property for AssemblyInfoReplacementParams - https://github.com/fsharp/FAKE/pull/675
+
 #### 3.18.0 - 04.03.2015
 * Remvoved internal class generated in AssemblyInfo.Vb - https://github.com/fsharp/FAKE/pull/673
 * Adding ability to control type library export (/tlb flag) of RegAsm - https://github.com/fsharp/FAKE/pull/668

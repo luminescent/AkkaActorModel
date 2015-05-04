@@ -35,7 +35,140 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          <h4>3.18.0 - 04.03.2015</h4>
+          <h4>3.30.3 - 02.05.2015</h4>
+
+<ul>
+<li>Fix for watching files via relative paths - <a href="https://github.com/fsharp/FAKE/pull/782">https://github.com/fsharp/FAKE/pull/782</a></li>
+</ul>
+
+<h4>3.30.2 - 30.04.2015</h4>
+
+<ul>
+<li>Fix package id parsing and avoid NPE when feed is missing some properties - <a href="https://github.com/fsharp/FAKE/pull/776">https://github.com/fsharp/FAKE/pull/776</a></li>
+</ul>
+
+<h4>3.30.1 - 29.04.2015</h4>
+
+<ul>
+<li>FCS simplification - <a href="https://github.com/fsharp/FAKE/pull/773">https://github.com/fsharp/FAKE/pull/773</a></li>
+<li>Paket push task runs in parallel - <a href="https://github.com/fsharp/FAKE/pull/768">https://github.com/fsharp/FAKE/pull/768</a></li>
+</ul>
+
+<h4>3.29.2 - 27.04.2015</h4>
+
+<ul>
+<li>New file system change watcher - <a href="http://fsharp.github.io/FAKE/watch.html">http://fsharp.github.io/FAKE/watch.html</a></li>
+<li>NuGet pack task treats non csproj files as nuspec files - <a href="https://github.com/fsharp/FAKE/pull/767">https://github.com/fsharp/FAKE/pull/767</a></li>
+<li>New helpers to start and stop DynamicsNAV ServiceTiers</li>
+<li>Automatically replace Win7ToWin8 import files for Dynamics NAV during Import</li>
+<li>OpenSourced DynamicsNAV replacement helpers</li>
+<li>Use Microsoft.AspNet.Razor 2.0.30506 for FAKE.Deploy - <a href="https://github.com/fsharp/FAKE/pull/756">https://github.com/fsharp/FAKE/pull/756</a></li>
+<li>New build parameter functions</li>
+<li>Fix <a href="http://stackoverflow.com/questions/29572870/f-fake-unable-to-get-fake-to-merge-placeholder-arguments-in-nuspec-file">http://stackoverflow.com/questions/29572870/f-fake-unable-to-get-fake-to-merge-placeholder-arguments-in-nuspec-file</a></li>
+<li>New environment variable helpers</li>
+</ul>
+
+<h4>3.28.0 - 09.04.2015</h4>
+
+<ul>
+<li>Don't run package restore during MSBuild run from FAKE - <a href="https://github.com/fsharp/FAKE/pull/753">https://github.com/fsharp/FAKE/pull/753</a></li>
+<li>Added support for Mage's CertHash parameter - <a href="https://github.com/fsharp/FAKE/pull/750">https://github.com/fsharp/FAKE/pull/750</a></li>
+<li>Force build server output in xUnit2 if the user wishes to - <a href="https://github.com/fsharp/FAKE/pull/749">https://github.com/fsharp/FAKE/pull/749</a></li>
+<li>Reverting 0df4569b3bdeef99edf2eec6013dab784e338b7e due to backwards compat issues</li>
+<li>Improvements for FAKE.Deploy - <a href="https://github.com/fsharp/FAKE/pull/745">https://github.com/fsharp/FAKE/pull/745</a></li>
+<li>Set debug flag on mono - <a href="https://github.com/fsharp/FAKE/pull/744">https://github.com/fsharp/FAKE/pull/744</a></li>
+</ul>
+
+<h4>3.27.0 - 07.04.2015</h4>
+
+<ul>
+<li>New Android publisher - <a href="http://fsharp.github.io/FAKE/androidpublisher.html">http://fsharp.github.io/FAKE/androidpublisher.html</a></li>
+<li>New Archive helpers allow to build zip, gzip, bzip2, tar, and tar.gz/tar.bz2 - <a href="https://github.com/fsharp/FAKE/pull/727">https://github.com/fsharp/FAKE/pull/727</a></li>
+<li>Download Status Parameter for HockeyAppHelper - <a href="https://github.com/fsharp/FAKE/pull/741">https://github.com/fsharp/FAKE/pull/741</a></li>
+<li>Added more parameters for HockeyApp Upload API - <a href="https://github.com/fsharp/FAKE/pull/723">https://github.com/fsharp/FAKE/pull/723</a></li>
+<li><code>NuGetPack</code> task allows to set framework references - <a href="https://github.com/fsharp/FAKE/pull/721">https://github.com/fsharp/FAKE/pull/721</a></li>
+<li>New task <code>NuGetPackDirectly</code> works without template files.</li>
+<li>Find NuGet.exe in current folder (and sub-folders) first, then look in PATH - <a href="https://github.com/fsharp/FAKE/pull/718">https://github.com/fsharp/FAKE/pull/718</a></li>
+<li>New tutorial about Vagrant - <a href="http://fsharp.github.io/FAKE/vagrant.html">http://fsharp.github.io/FAKE/vagrant.html</a></li>
+<li>REVERTING: SystemRoot also works on mono - <a href="https://github.com/fsharp/FAKE/pull/706">https://github.com/fsharp/FAKE/pull/706</a> (see <a href="https://github.com/fsharp/FAKE/issues/715)">https://github.com/fsharp/FAKE/issues/715)</a></li>
+<li>BUGFIX: Use DocumentNamespace for Nuspec files - <a href="https://github.com/fsharp/FAKE/pull/736">https://github.com/fsharp/FAKE/pull/736</a></li>
+<li>BUGFIX: Display agent success / error messages in UI for FAKE.Deploy - <a href="https://github.com/fsharp/FAKE/pull/735">https://github.com/fsharp/FAKE/pull/735</a></li>
+<li>BUGFIX: Add build directory for doc generation - <a href="https://github.com/fsharp/FAKE/pull/734">https://github.com/fsharp/FAKE/pull/734</a></li>
+</ul>
+
+<h4>3.26.0 - 25.03.2015</h4>
+
+<ul>
+<li>Detect GitLab CI as build server - <a href="https://github.com/fsharp/FAKE/pull/712">https://github.com/fsharp/FAKE/pull/712</a></li>
+</ul>
+
+<h4>3.25.2 - 24.03.2015</h4>
+
+<ul>
+<li>Look into PATH when scanning for NuGet.exe - <a href="https://github.com/fsharp/FAKE/pull/708">https://github.com/fsharp/FAKE/pull/708</a></li>
+<li>SystemRoot also works on mono - <a href="https://github.com/fsharp/FAKE/pull/706">https://github.com/fsharp/FAKE/pull/706</a></li>
+<li>Use EditorConfig - <a href="http://editorconfig.org/">http://editorconfig.org/</a></li>
+</ul>
+
+<h4>3.25.1 - 24.03.2015</h4>
+
+<ul>
+<li>More AppVeyor properties added - <a href="https://github.com/fsharp/FAKE/pull/704">https://github.com/fsharp/FAKE/pull/704</a></li>
+</ul>
+
+<h4>3.25.0 - 23.03.2015</h4>
+
+<ul>
+<li>Look into PATH when scanning for tools - <a href="https://github.com/fsharp/FAKE/pull/703">https://github.com/fsharp/FAKE/pull/703</a></li>
+</ul>
+
+<h4>3.24.0 - 22.03.2015</h4>
+
+<ul>
+<li>BREAKING CHANGE: Better support for AssemblyMetadata in AssemblyInfoHelper - <a href="https://github.com/fsharp/FAKE/pull/694">https://github.com/fsharp/FAKE/pull/694</a></li>
+<li>Added modules for building VB6 projects with SxS manifest - <a href="https://github.com/fsharp/FAKE/pull/697">https://github.com/fsharp/FAKE/pull/697</a></li>
+<li>Use parameter quoting for Paket helpers</li>
+</ul>
+
+<h4>3.23.0 - 12.03.2015</h4>
+
+<ul>
+<li>BREAKING CHANGE: Adjusted Xamarin.iOS archive helper params - <a href="https://github.com/fsharp/FAKE/pull/693">https://github.com/fsharp/FAKE/pull/693</a></li>
+<li>New operator </> allows to combine paths similar to @@ but with no trimming operations - <a href="https://github.com/fsharp/FAKE/pull/695">https://github.com/fsharp/FAKE/pull/695</a></li>
+</ul>
+
+<h4>3.22.0 - 12.03.2015</h4>
+
+<ul>
+<li>Globbing allows to grab folders without a trailing slash</li>
+<li>Removed long time obsolete globbing functions</li>
+</ul>
+
+<h4>3.21.0 - 11.03.2015</h4>
+
+<ul>
+<li>FAKE allows to run parallel builds - <a href="http://fsharp.github.io/FAKE/parallel-build.html">http://fsharp.github.io/FAKE/parallel-build.html</a></li>
+</ul>
+
+<h4>3.20.1 - 10.03.2015</h4>
+
+<ul>
+<li>Proper source index - <a href="https://github.com/fsharp/FAKE/issues/678">https://github.com/fsharp/FAKE/issues/678</a></li>
+</ul>
+
+<h4>3.20.0 - 10.03.2015</h4>
+
+<ul>
+<li>Always use FCS in FAKE and FSI in FAke.Deploy</li>
+<li>Modify VM size on a .csdef for Azure Cloud Services - <a href="https://github.com/fsharp/FAKE/pull/687">https://github.com/fsharp/FAKE/pull/687</a></li>
+<li>Added ZipHelper.ZipOfIncludes - <a href="https://github.com/fsharp/FAKE/pull/686">https://github.com/fsharp/FAKE/pull/686</a></li>
+<li>Added AppVeyorEnvironment.RepoTag &amp; .RepoTagName - <a href="https://github.com/fsharp/FAKE/pull/685">https://github.com/fsharp/FAKE/pull/685</a></li>
+<li>New tutorial about Azure Cloud Service - <a href="http://fsharp.github.io/FAKE/azurecloudservices.html">http://fsharp.github.io/FAKE/azurecloudservices.html</a></li>
+<li>Added basic support for creating Azure Cloud Services - <a href="http://fsharp.github.io/FAKE/apidocs/fake-azure-cloudservices.html">http://fsharp.github.io/FAKE/apidocs/fake-azure-cloudservices.html</a></li>
+<li>Added metadata property for AssemblyInfoReplacementParams - <a href="https://github.com/fsharp/FAKE/pull/675">https://github.com/fsharp/FAKE/pull/675</a></li>
+</ul>
+
+<h4>3.18.0 - 04.03.2015</h4>
 
 <ul>
 <li>Remvoved internal class generated in AssemblyInfo.Vb - <a href="https://github.com/fsharp/FAKE/pull/673">https://github.com/fsharp/FAKE/pull/673</a></li>
@@ -344,7 +477,7 @@ This resets the breaking change introduced in <a href="https://github.com/fsharp
 <li>Added option to disabled FAKE's automatic process killing</li>
 <li>Better AppyVeyor integration</li>
 <li>Added ability to define custom MSBuild loggers</li>
-<li>Fix for getting the branch name with Git >= 1.9</li>
+<li>Fix for getting the branch name with Git &gt;= 1.9</li>
 <li>Added functions to write and delete from registry</li>
 <li>NUnit NoThread, Domain and StopOnError parameters</li>
 <li>Add support for VS2013 MSTest</li>
@@ -418,7 +551,7 @@ This resets the breaking change introduced in <a href="https://github.com/fsharp
 <h4>1.64.0.0</h4>
 
 <ul>
-<li>New conditional dependency operator =?></li>
+<li>New conditional dependency operator =?&gt;</li>
 <li>BREAKING CHANGE: Some AssemblyInfo task parameters are now option types. See type hints.</li>
 </ul>
 
@@ -483,7 +616,7 @@ This resets the breaking change introduced in <a href="https://github.com/fsharp
 
 <ul>
 <li>Some smaller bugfixes</li>
-<li>New dependency syntax with ==> and <=></li>
+<li>New dependency syntax with ==&gt; and <=></li>
 <li>Tracing of StackTrace only if TargetHelper.PrintStackTraceOnError was set to true</li>
 </ul>
 
@@ -543,6 +676,7 @@ This resets the breaking change introduced in <a href="https://github.com/fsharp
               <li><a href="create-nuget-package.html">Create NuGet packages</a></li>
               <li><a href="specifictargets.html">Running specific targets</a></li>
               <li><a href="commandline.html">Running FAKE from command line</a></li>
+              <li><a href="parallel-build.html">Running targets in parallel</a></li>
               <li><a href="fsc.html">Using the F# compiler from FAKE</a></li>
               <li><a href="customtasks.html">Creating custom tasks</a></li>
               <li><a href="teamcity.html">TeamCity integration</a></li>
@@ -550,6 +684,9 @@ This resets the breaking change introduced in <a href="https://github.com/fsharp
               <li><a href="octopusdeploy.html">Octopus Deploy</a></li>
               <li><a href="typescript.html">TypeScript support</a></li>
               <li><a href="azurewebjobs.html">Azure WebJobs support</a></li>
+              <li><a href="azurecloudservices.html">Azure Cloud Services support</a></li>
+              <li><a href="androidpublisher.html">Android publisher</a></li>
+              <li><a href="watch.html">File Watcher</a></li>
               <li class="divider"></li>
               <li><a href="deploy.html">Fake.Deploy</a></li>
               <li class="nav-header">Reference</li>
