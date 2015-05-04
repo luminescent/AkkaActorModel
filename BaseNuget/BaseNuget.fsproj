@@ -62,9 +62,9 @@
     </Content>
     <Content Include="app.config" />
     <None Include="paket.references" />
-    <None Include="protos\tutorial\addressbook.proto" />
+    <!--<None Include="protos\tutorial\addressbook.proto" />
     <None Include="protos\google\protobuf\descriptor.proto" />
-    <None Include="protos\google\protobuf\csharp_options.proto" />
+    <None Include="protos\google\protobuf\csharp_options.proto" />-->
     <Content Include="licenses\protoc-license.txt">
       <Paket>True</Paket>
     </Content>

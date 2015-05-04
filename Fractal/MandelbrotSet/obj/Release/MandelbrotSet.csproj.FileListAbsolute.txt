@@ -2,3 +2,8 @@ C:\Git\AkkaActorModel\Fractal\MandelbrotSet\bin\Release\MandelbrotSet.dll
 C:\Git\AkkaActorModel\Fractal\MandelbrotSet\bin\Release\MandelbrotSet.pdb
 C:\Git\AkkaActorModel\Fractal\MandelbrotSet\obj\Release\MandelbrotSet.dll
 C:\Git\AkkaActorModel\Fractal\MandelbrotSet\obj\Release\MandelbrotSet.pdb
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\bin\Release\MandelbrotSet.dll
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\bin\Release\MandelbrotSet.pdb
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Release\MandelbrotSet.csprojResolveAssemblyReference.cache
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Release\MandelbrotSet.dll
+E:\Projects\FSharp\AkkaActorModel\Fractal\MandelbrotSet\obj\Release\MandelbrotSet.pdb

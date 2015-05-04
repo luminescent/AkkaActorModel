@@ -411,6 +411,33 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="M:Nessos.FsPickler.CompositePickler.CreateUninitialized``1">
  <summary>
      Creates an empty composite pickler for given type.
@@ -681,7 +708,7 @@
  <summary>
      Creates a deep clone of given object.
  </summary>
- <param name="t"></param>
+ <param name="value">Value to be cloned.</param>
 </member>
 <member name="">
 
@@ -758,6 +785,7 @@
  <param name="pickler">Pickler to use.</param>
  <param name="data">Pickle.</param>
  <param name="streamingContext">streaming context.</param>
+ <param name="encoding">encoding passed to the binary writer.</param>
 </member>
 <member name="M:Nessos.FsPickler.FsPicklerSerializer.SerializeSequence(System.Type,System.IO.Stream,System.Collections.IEnumerable,Microsoft.FSharp.Core.FSharpOption{System.Runtime.Serialization.StreamingContext},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
  <summary>Serialize a sequence of objects to the underlying stream.</summary>
@@ -902,6 +930,12 @@
  <param name="value">input value.</param>
  <param name="pickler">use specific pickler for hash computation.</param>
  <param name="hashFactory">the hashing algorithm to be used. MurMur3 by default.</param>
+</member>
+<member name="M:Nessos.FsPickler.FsPicklerSerializer.Clone``1(``0)">
+ <summary>
+     Creates a deep clone of given serializable object.
+ </summary>
+ <param name="value">Value to be cloned.</param>
 </member>
 <member name="">
 
@@ -1392,6 +1426,11 @@
 <member name="">
 
 </member>
+<member name="M:Nessos.FsPickler.ISerializablePickler.FromSerializationInfo``1(Microsoft.FSharp.Core.FSharpFunc{System.Runtime.Serialization.SerializationInfo,``0},Microsoft.FSharp.Core.FSharpFunc{System.Runtime.Serialization.SerializationInfo,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.Unit}})">
+<summary>
+ SerializationInfo-based pickler combinator
+</summary>
+</member>
 <member name="">
 
 </member>
@@ -1446,17 +1485,6 @@
      Defines a type conversion scheme in which strong assembly info is dropped 
      at deserialization.
  </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Nessos.FsPickler.InvalidPickleException">
-<summary>
- Raised when pickle is of invalid format.
-</summary>
 </member>
 <member name="">
 
@@ -1856,6 +1884,12 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.FsPickler.ReadState">
 <summary>
  Contains all state related to object deserializations
@@ -2037,6 +2071,12 @@
 <summary>
  Streaming context to the serialization
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -2481,6 +2521,11 @@
  F# function combinator
 </summary>
 </member>
+<member name="M:Nessos.FsPickler.Combinators.Pickler.fromSerializationInfo``1(Microsoft.FSharp.Core.FSharpFunc{System.Runtime.Serialization.SerializationInfo,``0},Microsoft.FSharp.Core.FSharpFunc{System.Runtime.Serialization.SerializationInfo,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Pickler combinator based on SerializationInfo
+</summary>
+</member>
 <member name="M:Nessos.FsPickler.Combinators.Pickler.alt``1(Microsoft.FSharp.Core.FSharpFunc{``0,System.Int32},Microsoft.FSharp.Collections.FSharpList{Nessos.FsPickler.Pickler{``0}})">
 <summary>
  alt combinator: choose from list of pickler combinators using tag reader
@@ -2897,12 +2942,71 @@
 <member name="T:Nessos.FsPickler.Emit">
 
 </member>
+<member name="">
+
+</member>
+<member name="P:Nessos.FsPickler.ExtensionMethods.Pickle`1.Bytes">
+<summary>
+ Byte array pickle
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.FsPickler.ExtensionMethods.Pickle`1">
+<summary>
+ Object pickle with type annotation
+</summary>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.SerializationInfo.TryGetObj(System.Runtime.Serialization.SerializationInfo,System.String)">
+ <summary>
+     Try getting value of provided name from SerializationInfo instance.
+     Returns 'None' if not found.
+ </summary>
+ <param name="name">Name for value.</param>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.SerializationInfo.TryGet``1(System.Runtime.Serialization.SerializationInfo,System.String)">
+ <summary>
+     Try getting value of provided type and name from SerializationInfo instance.
+     Returns 'None' if not found.
+ </summary>
+ <param name="name">Name for value.</param>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.SerializationInfo.Get``1(System.Runtime.Serialization.SerializationInfo,System.String)">
+ <summary>
+     Gets value of given type and provided name from SerializationInfo instance.
+ </summary>
+ <param name="name">Name for value.</param>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.SerializationInfo.Add``1(System.Runtime.Serialization.SerializationInfo,System.String,``0)">
+ <summary>
+     Adds value of given type to SerializationInfo instance.
+ </summary>
+ <param name="name">Name for value.</param>
+ <param name="value">Input value.</param>
+</member>
 <member name="M:Nessos.FsPickler.ExtensionMethods.Pickler.FromPrimitives.Static``1(Microsoft.FSharp.Core.FSharpFunc{Nessos.FsPickler.ReadState,Microsoft.FSharp.Core.FSharpFunc{System.String,``0}},Microsoft.FSharp.Core.FSharpFunc{Nessos.FsPickler.WriteState,Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.Unit}}},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
  <summary>Initializes a pickler out of a pair of read/write lambdas. Unsafe pickler generation method.</summary>
  <param name="reader">Deserialization logic for the pickler.</param>
  <param name="writer">Serialization logic for the pickler.</param>
  <param name="cacheByRef">Specifies whether objects serialized by this pickler should be cached by reference.</param>
  <param name="useWithSubtypes">Specifies whether pickler should also apply for all subtypes.</param>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.FsPicklerSerializer.UnPickleTyped``1(Nessos.FsPickler.FsPicklerSerializer,Nessos.FsPickler.ExtensionMethods.Pickle{``0},Microsoft.FSharp.Core.FSharpOption{System.Runtime.Serialization.StreamingContext},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+ <summary>
+     Deserializes a type annotated pickle.
+ </summary>
+ <param name="pickle">Type annotated pickle.</param>
+ <param name="streamingContext">streaming context.</param>
+ <param name="encoding">encoding passed to the binary reader.</param>
+</member>
+<member name="M:Nessos.FsPickler.ExtensionMethods.FsPicklerSerializer.PickleTyped``1(Nessos.FsPickler.FsPicklerSerializer,``0,Microsoft.FSharp.Core.FSharpOption{System.Runtime.Serialization.StreamingContext},Microsoft.FSharp.Core.FSharpOption{System.Text.Encoding})">
+ <summary>
+     Creates a type annotated pickle for given value.
+ </summary>
+ <param name="value">Value to be pickled.</param>
+ <param name="streamingContext">streaming context.</param>
+ <param name="encoding">encoding passed to the binary writer.</param>
 </member>
 <member name="T:Nessos.FsPickler.ExtensionMethods">
 <summary>
@@ -3165,6 +3269,15 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.FsPickler.ISerializableUtils">
 
 </member>
@@ -3209,22 +3322,14 @@
  deserialize fields, pass to factory method and push to stack
 </summary>
 </member>
-<member name="">
-
-</member>
-<member name="M:Nessos.FsPickler.PicklerEmit.emitSerializeProperties``1(System.Reflection.PropertyInfo[],System.String[],Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.WriteState},Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.Pickler[]},Nessos.FsPickler.Emit.EnvItem{``0},System.Reflection.Emit.ILGenerator)">
+<member name="M:Nessos.FsPickler.PicklerEmit.emitDeserializeMembers``2(``0[],System.String[],Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.ReadState},Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.Pickler[]},Nessos.FsPickler.Emit.EnvItem{``1},System.Reflection.Emit.ILGenerator)">
 <summary>
- serialize properties to the underlying stack
+ emits code for deserializing field or property values
 </summary>
 </member>
-<member name="M:Nessos.FsPickler.PicklerEmit.emitDeserializeFields``1(System.Reflection.FieldInfo[],System.String[],Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.ReadState},Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.Pickler[]},Nessos.FsPickler.Emit.EnvItem{``0},System.Reflection.Emit.ILGenerator)">
+<member name="M:Nessos.FsPickler.PicklerEmit.emitSerializeMembers``2(``0[],System.String[],Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.WriteState},Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.Pickler[]},Nessos.FsPickler.Emit.EnvItem{``1},System.Reflection.Emit.ILGenerator)">
 <summary>
- deserialize a collection of fields and store to parent object
-</summary>
-</member>
-<member name="M:Nessos.FsPickler.PicklerEmit.emitSerializeFields``1(System.Reflection.FieldInfo[],System.String[],Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.WriteState},Nessos.FsPickler.Emit.EnvItem{Nessos.FsPickler.Pickler[]},Nessos.FsPickler.Emit.EnvItem{``0},System.Reflection.Emit.ILGenerator)">
-<summary>
- emits IL that serializes a collection of fields
+ emits code for serializing field or property values
 </summary>
 </member>
 <member name="M:Nessos.FsPickler.PicklerEmit.emitDeserialize(System.Type,System.Reflection.Emit.ILGenerator)">
@@ -3792,11 +3897,16 @@
 <member name="">
 
 </member>
-<member name="">
-
+<member name="M:Nessos.FsPickler.Reflection.isRecursiveType(System.Type)">
+<summary>
+ Checks if type is &apos;recursive&apos; according to above definition
+ Note that type must additionally be a reference type for this to be meaningful.
+</summary>
 </member>
-<member name="">
-
+<member name="M:Nessos.FsPickler.Reflection.isPolymorphicRecursive(System.Type)">
+<summary>
+ Detect polymorphic recursion patterns
+</summary>
 </member>
 <member name="">
 
@@ -3805,6 +3915,9 @@
 <summary>
  walks up the type hierarchy, gathering all instance members
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -3833,11 +3946,6 @@
 </member>
 <member name="">
 
-</member>
-<member name="M:Nessos.FsPickler.Reflection.MemberInfo.get_NormalizedName(System.Reflection.MemberInfo)">
-<summary>
- normalizes member name into a serialializable string.
-</summary>
 </member>
 <member name="">
 
@@ -4064,15 +4172,78 @@
 <member name="T:Nessos.FsPickler.RootSerialization">
 
 </member>
-<member name="M:Nessos.FsPickler.SequenceUtils.readUnboundedSequenceLazy``1(Nessos.FsPickler.Pickler{``0},Nessos.FsPickler.ReadState,System.String)">
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.FsPickler.SequenceUtils.SequenceDeserializerEnumerator`1">
 <summary>
  lazily deserialize a sequence of elements ; reserved for top-level sequence deserializations only.
 </summary>
 </member>
-<member name="M:Nessos.FsPickler.SequenceUtils.writeUnboundedSequence``1(Nessos.FsPickler.Pickler{``0},Nessos.FsPickler.WriteState,System.String,System.Collections.Generic.IEnumerable{``0})">
+<member name="">
+
+</member>
+<member name="M:Nessos.FsPickler.SequenceUtils.writeUnboundedSequence``1(System.Boolean,Nessos.FsPickler.Pickler{``0},Nessos.FsPickler.WriteState,System.String,System.Collections.Generic.IEnumerable{``0})">
 <summary>
  serializes a sequence of unknown length to the stream ; returns its eventual length
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="M:Nessos.FsPickler.SequenceUtils.readBoundedSequence``1(Nessos.FsPickler.Pickler{``0},System.Int32,Nessos.FsPickler.ReadState,System.String)">
 <summary>
@@ -4923,11 +5094,6 @@
 <member name="M:Nessos.FsPickler.Utils.hset``1(System.Collections.Generic.IEnumerable{``0})">
 <summary>
  hashset constructor
-</summary>
-</member>
-<member name="M:Nessos.FsPickler.Utils.raise``1(System.Exception)">
-<summary>
- stackless raise operator
 </summary>
 </member>
 <member name="">
