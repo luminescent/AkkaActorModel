@@ -5,10 +5,3 @@ C:\Git\AkkaActorModel\ChatHelper\bin\Release\FSharp.Core.dll
 C:\Git\AkkaActorModel\ChatHelper\bin\Release\FSharp.Core.xml
 C:\Git\AkkaActorModel\ChatHelper\obj\Release\ChatHelper.dll
 C:\Git\AkkaActorModel\ChatHelper\obj\Release\ChatHelper.pdb
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Release\ChatHelper.XML
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Release\ChatHelper.dll
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Release\ChatHelper.pdb
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Release\FSharp.Core.dll
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\bin\Release\FSharp.Core.xml
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\obj\Release\ChatHelper.dll
-E:\Projects\FSharp\AkkaActorModel\ChatHelper\obj\Release\ChatHelper.pdb

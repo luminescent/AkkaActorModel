@@ -8,13 +8,3 @@ C:\Git\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\Newtonsoft.Json.xml
 C:\Git\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.csprojResolveAssemblyReference.cache
 C:\Git\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.exe
 C:\Git\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.pdb
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\HelloAkka.exe.config
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\HelloAkka.exe
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\HelloAkka.pdb
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\Akka.dll
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\Newtonsoft.Json.dll
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\Akka.xml
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\bin\Release\Newtonsoft.Json.xml
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.csprojResolveAssemblyReference.cache
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.exe
-E:\Projects\FSharp\AkkaActorModel\src\HelloWorld\HelloAkka\obj\Release\HelloAkka.pdb
