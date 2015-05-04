@@ -59,13 +59,14 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="app.config" />
+    <None Include="packages.config" />
     <None Include="protos\tutorial\addressbook.proto" />
     <None Include="protos\google\protobuf\descriptor.proto" />
     <None Include="protos\google\protobuf\csharp_options.proto" />
     <Content Include="licenses\protoc-license.txt" />
     <Content Include="licenses\license.txt" />
-    <Content Include="app.config" />
+    <Content Include="CHANGES.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Akka">
