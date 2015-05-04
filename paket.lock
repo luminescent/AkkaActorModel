@@ -1,6 +1,23 @@
 NUGET
   remote: https://nuget.org/api/v2
   specs:
+    Akka (1.0.1)
+      Newtonsoft.Json (>= 6.0.8)
+    Akka.FSharp (1.0.1)
+      Akka (>= 1.0.1)
+      FSPowerPack.Core.Community (>= 3.0.0.0)
+      FSPowerPack.Linq.Community (>= 3.0.0.0)
+      FsPickler (>= 0.9.11)
+    Akka.Persistence (1.0.1-pre1504282013)
+      Akka (>= 1.0.1)
+      Google.ProtocolBuffers (>= 2.4.1.521)
+      Newtonsoft.Json (>= 6.0.8)
+    Akka.Persistence.FSharp (1.0.1-pre1504282013)
+      Akka.Persistence (>= 1.0.1-pre1504282013)
+    Akka.Remote (1.0.1)
+      Akka (>= 1.0.1)
+      Google.ProtocolBuffers (>= 2.4.1.521)
+      Helios (>= 1.4.0)
     FAKE (3.18.0)
     FSharp.Compiler.Service (0.0.85)
     FSharp.Formatting (2.7.4)
@@ -8,12 +25,19 @@ NUGET
       FSharpVSPowerTools.Core (>= 1.7.0)
     FSharpVSPowerTools.Core (1.7.0)
       FSharp.Compiler.Service (>= 0.0.81)
+    FsPickler (1.0.17)
+    FSPowerPack.Core.Community (3.0.0.0)
+    FSPowerPack.Linq.Community (3.0.0.0)
+      FSPowerPack.Core.Community
+    Google.ProtocolBuffers (2.4.1.521)
+    Helios (1.4.0)
     Microsoft.Bcl (1.1.10)
       Microsoft.Bcl.Build (>= 1.0.14)
     Microsoft.Bcl.Build (1.0.21)
     Microsoft.Net.Http (2.2.29)
       Microsoft.Bcl (>= 1.1.10)
       Microsoft.Bcl.Build (>= 1.0.14)
+    Newtonsoft.Json (6.0.8)
     NuGet.CommandLine (2.8.3)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)
@@ -23,5 +47,5 @@ NUGET
 GITHUB
   remote: fsharp/FAKE
   specs:
-    modules/Octokit/Octokit.fsx (9c61ff79fce68a16fc4b027c8a931d89d7fb7c6d)
+    modules/Octokit/Octokit.fsx (9e0a19f04df4de2a895de6a7c8c459cbde8498f6)
       Octokit
