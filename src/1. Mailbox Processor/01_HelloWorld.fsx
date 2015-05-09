@@ -1,13 +1,20 @@
 ﻿// Create Console-application, then NuGet: Install-Package Akka
-module AkkaConsoleApplication
+//module AkkaConsoleApplication = 
 
 #if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
+#I @"../../bin"
+
+#r @"Newtonsoft.Json.dll"
+#r @"FsPickler.dll"
+#r @"FSharp.PowerPack.Linq.dll"
+#r @"Akka.dll"
+#r @"Akka.FSharp.dll"
 #endif
 
-open Akka.FSharp
 open Akka.Actor
+open Akka
+open Akka.FSharp
+open Newtonsoft.Json
 open System
 
 type GreetMsg =

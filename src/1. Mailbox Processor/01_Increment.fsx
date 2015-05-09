@@ -1,6 +1,11 @@
 ﻿#if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
+#I @"../../bin"
+
+#r @"Newtonsoft.Json.dll"
+#r @"FsPickler.dll"
+#r @"FSharp.PowerPack.Linq.dll"
+#r @"Akka.dll"
+#r @"Akka.FSharp.dll"
 #endif
 
 open Akka.FSharp
@@ -34,7 +39,7 @@ type SimpleActor() as this =
 
 
     override this.Unhandled(msg:obj) = // can be used for dead letter
-            printfn "What shoudl I do with this thing %A" (msg.GetType())
+            printfn "What should I do with this thing: %A" msg //(msg.GetType())
 
 
 
@@ -53,6 +58,11 @@ actor <! Decrement
 actor <! Display
 
 actor <! "ciao"
+
+
+system.AwaitTermination()
+
+printfn "Done"
 
 
 

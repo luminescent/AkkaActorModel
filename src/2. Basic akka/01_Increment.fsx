@@ -1,10 +1,15 @@
-﻿open Akka.Actor
-
+﻿
 #if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
+#I @"../../bin"
+
+#r @"FsPickler.dll"
+#r @"FSharp.PowerPack.Linq.dll"
+#r @"Newtonsoft.Json.dll"
+#r @"Akka.dll"
+#r @"Akka.FSharp.dll"
 #endif
 
+open Akka.Actor
 open Akka.FSharp
 open Akka.Actor
 open System
@@ -33,4 +38,7 @@ actor.Tell Increment
 actor.Tell Increment
 actor.Tell Increment
 actor.Tell Print
+//actor.Tell PoisonPill.Instance
 
+
+//system.AwaitTermination()

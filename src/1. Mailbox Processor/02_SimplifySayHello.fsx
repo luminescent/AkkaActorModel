@@ -1,8 +1,11 @@
 #if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
-#r @"..\..\bin\Akka.Remote.dll"
-#r @"..\..\bin\FSharp.PowerPack.dll"
+#I @"../../bin"
+
+#r @"Newtonsoft.Json.dll"
+#r @"FsPickler.dll"
+#r @"FSharp.PowerPack.Linq.dll"
+#r @"Akka.dll"
+#r @"Akka.FSharp.dll"
 #endif
 
 open System
@@ -15,6 +18,7 @@ open Akka.FSharp
 // There is a simpler way to define an Actor
 
 let system = ActorSystem.Create("FSharp")
+//let poisonPill = PoisonPill.Instance
 
 let echoServer = 
     spawn system "EchoServer"
@@ -22,10 +26,16 @@ let echoServer =
             actor {
                 let! message = mailbox.Receive()
                 match box message with
-                | :? string as msg -> printfn "Hello %s" msg
-                | _ ->  failwith "unknown message"
+                | :? string as msg -> 
+                                    printfn "Hello %s" msg
+                                    system.Shutdown()
+                | _ ->  failwith "unknown message"                
             } 
 
 echoServer <! "F#!"
 
-system.Shutdown()
+
+//system.Shutdown()
+system.AwaitTermination()
+
+printfn "Done"

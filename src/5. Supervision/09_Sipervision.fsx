@@ -1,6 +1,8 @@
 ﻿#if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
+#I @"../../bin"
+
+#r @"Akka.dll"
+#r @"Akka.FSharp.dll"
 #endif
 
 open Akka
@@ -33,6 +35,8 @@ let actor = spawnOpt system "actor" <|
 actor <! Print("Hello")
 actor <! Boom
 actor <! Print("I'm back")
+
+system.AwaitTermination()
 
 //
 //

@@ -1,9 +1,12 @@
-﻿module Ask
+﻿module Ask 
 
 #if INTERACTIVE
-#r @"..\..\bin\Akka.dll"
-#r @"..\..\bin\Akka.FSharp.dll"
-#r @"..\..\bin\FSharp.PowerPack.dll"
+#I @"../../bin"
+
+#r @"../../bin/Akka.dll"
+#r @"../../bin/Akka.FSharp.dll"
+#r @"../../bin/FSharp.PowerPack.dll"
+#r @"FsPickler.dll"
 #endif
 
 open Akka.FSharp
@@ -16,7 +19,7 @@ open System.IO
 // In the actor we use 'sender <!' to return the value.
 
 
-let filePath = __SOURCE_DIRECTORY__ + @"\..\..\src\Data\words.txt"
+let filePath = __SOURCE_DIRECTORY__ + @"/../../src/Data/words.txt"
 
 
 let system = ActorSystem.Create("Ask-System")
